@@ -165,6 +165,7 @@ Install [Go](https://go.dev/) first
 git clone https://github.com/muquit/clip-httpd
 cd clip-httpd
 go build .
+./clip-httpd -version
 ```
 Cross-compile for other platforms
 * Install [go-xbuild-go](https://github.com/muquit/go-xbuild-go)

@@ -13,6 +13,7 @@ Install @GO@ first
 git clone @URL@
 cd @ME@
 go build .
+./clip-httpd -version
 ```
 Cross-compile for other platforms
 * Install @GO_XBUILD_GO@
