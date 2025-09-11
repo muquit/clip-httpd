@@ -88,13 +88,13 @@ Get up and running in just a few steps:
 2. **Start the server on your desktop:**
 
 ```bash
-export CLIP_HTTPD_APIKEY='your_secret_key'
+ export CLIP_HTTPD_APIKEY='your_secret_key'
 ./clip-httpd -cert cert.pem -key key.pem
 ```
 
 3. **Send text from a remote machine:**
 ```bash
-export CLIP_HTTPD_APIKEY='your_secret_key'
+ export CLIP_HTTPD_APIKEY='your_secret_key'
 echo "Hello from remote!" | ./pbcopy.sh -h <your_desktop_ip> -p 8881
 ./pbcopy.sh -h <your_desktop_ip> -p 8881 < file.txt
 ```
