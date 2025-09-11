@@ -2,3 +2,4 @@
 *.bkp
 *.bak
 /clip-httpd
+/bin/
