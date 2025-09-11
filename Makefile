@@ -18,7 +18,7 @@ USAGE_FILE=./docs/usage.md
 all: build build_all doc
 
 build:
-	@echo "*** Compiling $(BINAY) $(VERSION) ...."
+	@echo "*** Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -f bin/*
 	go build $(BUILD_OPTIONS) -o $(BINARY)
 
