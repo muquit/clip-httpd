@@ -2,6 +2,7 @@
 @[:markdown](history.md)
 @[:markdown](usage.md)
 @[:markdown](quickstart.md)
+@[:markdown](version.md)
 @[:markdown](howitworks.md)
 @[:markdown](download.md)
 @[:markdown](cert.md)

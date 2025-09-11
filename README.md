@@ -3,6 +3,7 @@
   - [History](#history)
   - [Usage](#usage)
   - [Quick Start](#quick-start)
+  - [Version](#version)
   - [How it works](#how-it-works)
     - [Server (Text Receiver)](#server-text-receiver)
     - [Client (Text Sender)](#client-text-sender)
@@ -94,6 +95,12 @@ export CLIP_HTTPD_APIKEY='your_secret_key'
 export CLIP_HTTPD_APIKEY='your_secret_key'
 echo "Hello from remote!" | ./pbcopy.sh -h <your_desktop_ip> -p 8881
 ```
+
+
+## Version
+The current version is 1.0.1
+
+Please look at [ChangeLog](ChangeLog.md) for what has changed in the current version.
 
 
 ## How it works
