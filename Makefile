@@ -8,7 +8,7 @@ MAIN_MD=./docs/main.md
 README=./README.md
 BINARY=./clip-httpd
 VERSION := $(shell cat VERSION)
-BUILD_OPTIONS = -ldflags "-s -w -X main.Version=$(VERSION)"
+BUILD_OPTIONS = -ldflags "-s -w"
 MARKDOWC_TOC=markdown-toc-go
 # requires markdown-toc-go v 1.0.3+
 GLOSSARY_FILE=./docs/glossary.txt
