@@ -1,8 +1,8 @@
 ## Installation
 ### Download
-Download pre-compiled binaries from @RELEASES@ page
+* Download pre-compiled binaries from @RELEASES@ page
 
-Please look at [How to use](#how-to-use)
+* Please look at [How to use](#how-to-use)
 
 ### Building from source
 

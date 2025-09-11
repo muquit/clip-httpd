@@ -154,9 +154,9 @@ the [images/clip-httpd.mermaid](images/clip-httpd.mermaid) for [mermaid](https:/
 
 ## Installation
 ### Download
-Download pre-compiled binaries from [Releases](https://github.com/muquit/clip-httpd/releases) page
+* Download pre-compiled binaries from [Releases](https://github.com/muquit/clip-httpd/releases) page
 
-Please look at [How to use](#how-to-use)
+* Please look at [How to use](#how-to-use)
 
 ### Building from source
 
