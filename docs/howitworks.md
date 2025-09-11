@@ -2,8 +2,8 @@
 
 The @CLIPSINK@ works on a simple and secure **client-server model**.
 The @CLIPSINK@ binary is the server that runs on the machine whose 
-clipboard you want to control, like your desktop. The client is a small 
-script on a remote machine that sends text to the server.
+clipboard you want to control, like your desktop. The client @PBCOPY@ is a small 
+script runs on a remote machine that sends text to the server.
 
 -----
 

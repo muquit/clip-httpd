@@ -72,8 +72,8 @@ Flags:
 
 The [clip-httpd](https://github.com/muquit/clip-httpd) works on a simple and secure **client-server model**.
 The [clip-httpd](https://github.com/muquit/clip-httpd) binary is the server that runs on the machine whose 
-clipboard you want to control, like your desktop. The client is a small 
-script on a remote machine that sends text to the server.
+clipboard you want to control, like your desktop. The client [pbcopy.sh](pbcopy.sh) is a small 
+script runs on a remote machine that sends text to the server.
 
 -----
 
@@ -234,4 +234,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-10-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-11-2025</sub>
