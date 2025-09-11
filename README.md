@@ -2,6 +2,7 @@
   - [Introduction](#introduction)
   - [History](#history)
   - [Usage](#usage)
+  - [Quick Start](#quick-start)
   - [How it works](#how-it-works)
     - [Server (Text Receiver)](#server-text-receiver)
     - [Client (Text Sender)](#client-text-sender)
@@ -41,7 +42,7 @@ I had issues with clipboard functionality when mixing iTerm2, tmux, vim/nvim, et
 It runs on my Mac and allows me to copy text or content of large text file 
 to the Mac clipboard using 
 [curl](https://curl.se/) over HTTPS from any remote environment. Especially for text files, it
-is certainly much simpler than starting a scp session to copy a file. In mac I 
+is certainly much simpler than starting a scp session to copy a file. On macOS I 
 just run `pbpaste > file.txt` to copy the content to a file.
 
 It should work on Windows and
@@ -71,6 +72,29 @@ Flags:
   -version
     	Print version and exit
 ```
+
+## Quick Start
+
+Get up and running in just a few steps:
+
+1. **Generate a self-signed certificate (once per desktop):**
+```bash
+   openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 3650 -nodes
+```
+
+2. Start the server on your desktop:
+
+```bash
+export CLIP_HTTPD_APIKEY='your_secret_key'
+./clip-httpd -cert cert.pem -key key.pem
+```
+
+3. Send text from a remote machine:
+```bash
+export CLIP_HTTPD_APIKEY='your_secret_key'
+echo "Hello from remote!" | ./pbcopy.sh -h <your_desktop_ip> -p 8881
+```
+
 
 ## How it works
 
@@ -204,7 +228,7 @@ clip-httpd -cert cert.pem -key key.pem
 ### Copy client to your remote hosts
 
 Look at the sample client [pbcopy.sh](pbcopy.sh) script. It uses [curl](https://curl.se/). 
-I use `pbcopy` command on mac, hense I named it [pbcopy.sh](pbcopy.sh). 
+I use `pbcopy` command on mac, hence I named it [pbcopy.sh](pbcopy.sh). 
 ```bash
 pbcopy.sh -h
 A remote pbcopy client for clip-httpd.

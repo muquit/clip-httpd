@@ -7,7 +7,7 @@ I had issues with clipboard functionality when mixing iTerm2, tmux, vim/nvim, et
 It runs on my Mac and allows me to copy text or content of large text file 
 to the Mac clipboard using 
 @CURL@ over HTTPS from any remote environment. Especially for text files, it
-is certainly much simpler than starting a scp session to copy a file. In mac I 
+is certainly much simpler than starting a scp session to copy a file. On macOS I 
 just run `pbpaste > file.txt` to copy the content to a file.
 
 It should work on Windows and
