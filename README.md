@@ -59,7 +59,7 @@ it works exactly the way I need.
 ## Usage
 ```
 clip-httpd v1.0.1 - A simple, secure, cross-platform clipboard server.
-URL: https://github.com/muquit/clip-httpd/
+URL:https://github.com/muquit/clip-httpd/
 
 Flags:
   -cert-file string

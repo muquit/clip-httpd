@@ -23,9 +23,10 @@ import (
 	"github.com/joho/godotenv"
 )
 
+var Version string;
 const (
-	version = "1.0.1"
 	me = "clip-httpd"
+	url = "https://github.com/muquit/clip-httpd"
 )
 
 
@@ -68,11 +69,11 @@ func clipboardHandler(apiKey string) http.HandlerFunc {
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(),
-			"%s v%s - A simple, secure, cross-platform clipboard server.\n", me, version)
-		fmt.Fprintf(flag.CommandLine.Output(), "URL: https://github.com/muquit/%s/\n\n",me)
+			"%s %s - A simple, secure, cross-platform clipboard server.\n", me, Version)
+		fmt.Fprintf(flag.CommandLine.Output(), "URL:%s/\n\n",url)
 		fmt.Fprintf(flag.CommandLine.Output(), "Flags:\n")
 		flag.PrintDefaults()
-		fmt.Println("\n** Specify secret with env variable CLIP_HTTPD_APIKEY ***")
+		fmt.Println("\n** Specify server secret with env variable CLIP_HTTPD_APIKEY ***\n")
 	}
 
 	host := flag.String("host", "0.0.0.0", "Host address to bind the server to")
@@ -83,7 +84,7 @@ func main() {
 	flag.Parse()
 
 	if *versionFlag {
-		fmt.Println(version)
+		fmt.Printf("%s %s %s\n",me, Version, url)
 		os.Exit(0)
 	}
 
@@ -102,12 +103,12 @@ func main() {
 
 	isTlsEnabled := *certFile != "" && *keyFile != ""
 	if isTlsEnabled {
-		log.Printf("Starting ClipSink v%s HTTPS server on https://%s ... 🔐", version, addr)
+		log.Printf("Starting ClipSink v%s HTTPS server on https://%s ... 🔐", Version, addr)
 		if err := http.ListenAndServeTLS(addr, *certFile, *keyFile, nil); err != nil {
 			log.Fatalf("Could not start HTTPS server: %s\n", err)
 		}
 	} else {
-		log.Printf("Starting ClipSink v%s HTTP server on http://%s ... 🛰️", version, addr)
+		log.Printf("Starting ClipSink v%s HTTP server on http://%s ... 🛰️", Version, addr)
 		log.Println("WARNING: Server is running in insecure HTTP mode. Use -cert-file and -key-file for HTTPS.")
 		if err := http.ListenAndServe(addr, nil); err != nil {
 			log.Fatalf("Could not start HTTP server: %s\n", err)

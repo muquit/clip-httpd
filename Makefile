@@ -7,8 +7,10 @@ README_ORIG=./docs/README.md
 MAIN_MD=./docs/main.md
 README=./README.md
 BINARY=./clip-httpd
+VERSION := $(shell cat VERSION)
+BUILD_OPTIONS = -ldflags "-s -w -X main.Version=$(VERSION)"
 MARKDOWC_TOC=markdown-toc-go
-# v 1.0.3
+# requires markdown-toc-go v 1.0.3+
 GLOSSARY_FILE=./docs/glossary.txt
 USAGE_FILE=./docs/usage.md
 
@@ -16,15 +18,15 @@ USAGE_FILE=./docs/usage.md
 all: build build_all doc
 
 build:
-	@echo "*** Compiling markdon-toc-go ...."
+	@echo "*** Compiling $(BINAY) $(VERSION) ...."
 	@/bin/rm -f bin/*
-	go build -o $(BINARY)
+	go build $(BUILD_OPTIONS) -o $(BINARY)
 
 # cross compile for various platforms
 # requires go-xbuild-go from 
 # https://github.com/muquit/go-xbuild-go
 build_all:
-	@echo "*** Cross Compiling $(BINARY) ...."
+	@echo "*** Cross Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -f bin/*
 	go-xbuild-go
 
