@@ -1,2 +1,4 @@
 *.pem
+*.bkp
+*.bak
 /clip-httpd
