@@ -246,14 +246,14 @@ clip-httpd -cert cert.pem -key key.pem
 
 Look at the sample client [pbcopy.sh](pbcopy.sh) script. It uses [curl](https://curl.se/). 
 I use `pbcopy` command on mac, hence I named it [pbcopy.sh](pbcopy.sh). 
+
 ```bash
-pbcopy.sh -h
-A remote pbcopy client for clip-httpd.
+A remote clipboard copy client for clip-httpd.
 
 This script reads from standard input and sends the data to a clip-httpd server.
 
 Usage:
-  pbcopy [-h host] [-p port]
+  pbcopy.sh [-h host] [-p port]
 
 Options:
   -h    The hostname or IP address of the clip-httpd server (default: 192.168.1.72)

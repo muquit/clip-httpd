@@ -7,6 +7,7 @@
 @[:markdown](download.md)
 @[:markdown](cert.md)
 @[:markdown](howtouse.md)
+@[:markdown](pbcopy.txt)
 @[:markdown](usecase.md)
 @[:markdown](license.txt)
 @[:markdown](authors.md)

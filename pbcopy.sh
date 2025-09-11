@@ -38,7 +38,7 @@ Example:
   cat file.txt | pbcopy.sh -h 192.168.1.100 -p 9000
   pbcopy.sh < file.txt
 EOF
-  exit 1
+  exit 0
 }
 
 # --- Parse Command-Line Flags ---

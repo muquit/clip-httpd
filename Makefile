@@ -13,6 +13,7 @@ MARKDOWC_TOC=markdown-toc-go
 # requires markdown-toc-go v 1.0.3+
 GLOSSARY_FILE=./docs/glossary.txt
 USAGE_FILE=./docs/usage.md
+PBCOPY_FILE=./docs/pbcopy.txt
 
 
 all: build build_all doc
@@ -45,6 +46,9 @@ gen_usage: build
 	@echo '```' >> $(USAGE_FILE)
 	@${BINARY} -h 2>> $(USAGE_FILE)
 	@echo '```' >> $(USAGE_FILE)
+	@echo '```bash' > $(PBCOPY_FILE)
+	@./pbcopy.sh -h >> $(PBCOPY_FILE)
+	@echo '```' >> $(PBCOPY_FILE)
 
 clean:
 	/bin/rm -f $(BINARY)
