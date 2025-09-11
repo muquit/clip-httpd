@@ -27,7 +27,7 @@ build:
 # https://github.com/muquit/go-xbuild-go
 build_all:
 	@echo "*** Cross Compiling $(BINARY) $(VERSION) ...."
-	@/bin/rm -f bin/*
+	@/bin/rm -rf ./bin
 	go-xbuild-go
 
 release:

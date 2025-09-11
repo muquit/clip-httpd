@@ -73,7 +73,7 @@ func main() {
 		fmt.Fprintf(flag.CommandLine.Output(), "URL:%s/\n\n",url)
 		fmt.Fprintf(flag.CommandLine.Output(), "Flags:\n")
 		flag.PrintDefaults()
-		fmt.Println("\n** Specify server secret with env variable CLIP_HTTPD_APIKEY ***\n")
+		fmt.Fprintf(flag.CommandLine.Output(),"\n** Specify server secret with env variable CLIP_HTTPD_APIKEY ***\n")
 	}
 
 	host := flag.String("host", "0.0.0.0", "Host address to bind the server to")

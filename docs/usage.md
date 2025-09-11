@@ -14,4 +14,6 @@ Flags:
     	Port for the server to listen on (default 8881)
   -version
     	Print version and exit
+
+** Specify server secret with env variable CLIP_HTTPD_APIKEY ***
 ```

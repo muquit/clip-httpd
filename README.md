@@ -72,6 +72,8 @@ Flags:
     	Port for the server to listen on (default 8881)
   -version
     	Print version and exit
+
+** Specify server secret with env variable CLIP_HTTPD_APIKEY ***
 ```
 
 ## Quick Start
@@ -164,7 +166,9 @@ Install [Go](https://go.dev/) first
 ```bash
 git clone https://github.com/muquit/clip-httpd
 cd clip-httpd
-go build .
+go build -ldflags "-s -w" .
+or
+make build
 ./clip-httpd -version
 ```
 Cross-compile for other platforms
@@ -173,6 +177,8 @@ Then, type:
 
 ```bash
 go-xbuild-go
+or 
+make build_all
 ```
 Look at `bin/' directory
 

@@ -12,7 +12,9 @@ Install @GO@ first
 ```bash
 git clone @URL@
 cd @ME@
-go build .
+go build -ldflags "-s -w" .
+or
+make build
 ./clip-httpd -version
 ```
 Cross-compile for other platforms
@@ -21,6 +23,8 @@ Then, type:
 
 ```bash
 go-xbuild-go
+or 
+make build_all
 ```
 Look at `bin/' directory
 
