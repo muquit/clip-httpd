@@ -38,3 +38,7 @@ The command will create two files in your current directory:
 | `-days 3650`       | Sets the certificate's validity period to 10 years.                                    |
 | `-nodes`           | (No DES) Creates the private key without encrypting it with a passphrase. This is crucial for servers that need to start automatically. |
 
+## Dump the certificate
+```bash
+openssl x509 -text -noout -in cert.pem
+```

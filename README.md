@@ -13,6 +13,7 @@
     - [Building from source](#building-from-source)
   - [How to Generate a Self-Signed Certificate](#how-to-generate-a-self-signed-certificate)
   - [Command Flags of openssl](#command-flags-of-openssl)
+  - [Dump the certificate](#dump-the-certificate)
   - [How to use](#how-to-use)
     - [Run the server on your desktop](#run-the-server-on-your-desktop)
     - [Copy client to your remote hosts](#copy-client-to-your-remote-hosts)
@@ -225,6 +226,10 @@ The command will create two files in your current directory:
 | `-days 3650`       | Sets the certificate's validity period to 10 years.                                    |
 | `-nodes`           | (No DES) Creates the private key without encrypting it with a passphrase. This is crucial for servers that need to start automatically. |
 
+## Dump the certificate
+```bash
+openssl x509 -text -noout -in cert.pem
+```
 
 ## How to use
 
