@@ -26,7 +26,7 @@ go-xbuild-go
 or 
 make build_all
 ```
-Look at `bin/' directory
+Look at `bin/ directory for archive with build binaries
 
 Please look at @MAKEFILE@ for more info
 
