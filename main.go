@@ -90,7 +90,7 @@ func main() {
 	apiKey := os.Getenv("CLIP_HTTPD_APIKEY")
 	if apiKey == "" {
 		_ = godotenv.Load()
-		apiKey = os.Getenv("CLIPSINK_APIKEY")
+		apiKey = os.Getenv("CLIP_HTTPD_APIKEY")
 	}
 
 	if apiKey == "" {
