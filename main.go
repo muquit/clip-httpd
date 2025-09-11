@@ -94,7 +94,7 @@ func main() {
 	}
 
 	if apiKey == "" {
-		log.Fatal("Error: API key not set. Set the CLIPSINK_APIKEY environment variable or create a .env file.")
+		log.Fatal("Error: API key not set. Set the CLIP_HTTPD_APIKEY environment variable or create a .env file.")
 	}
 
 	addr := fmt.Sprintf("%s:%d", *host, *port)
