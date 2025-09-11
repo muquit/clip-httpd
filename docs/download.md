@@ -22,7 +22,7 @@ Then, type:
 ```bash
 go-xbuild-go
 ```
-Look at `bin/` directory
+Look at [bin/](bin/) directory
 
 Please look at @MAKEFILE@ for more info
 
