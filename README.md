@@ -12,7 +12,7 @@
     - [Download](#download)
     - [Building from source](#building-from-source)
   - [How to Generate a Self-Signed Certificate](#how-to-generate-a-self-signed-certificate)
-  - [Command Flags Explained](#command-flags-explained)
+  - [Command Flags of openssl](#command-flags-of-openssl)
   - [How to use](#how-to-use)
     - [Run the server on your desktop](#run-the-server-on-your-desktop)
     - [Copy client to your remote hosts](#copy-client-to-your-remote-hosts)
@@ -203,7 +203,7 @@ The command will create two files in your current directory:
 
 * `cert.pem`: Your public certificate, which you can share.
 
-## Command Flags Explained
+## Command Flags of openssl
 
 | Flag               | Purpose                                                                                |
 | ------------------ | -------------------------------------------------------------------------------------- |

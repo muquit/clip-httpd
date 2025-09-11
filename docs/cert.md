@@ -26,7 +26,7 @@ The command will create two files in your current directory:
 
 * `cert.pem`: Your public certificate, which you can share.
 
-## Command Flags Explained
+## Command Flags of openssl
 
 | Flag               | Purpose                                                                                |
 | ------------------ | -------------------------------------------------------------------------------------- |
