@@ -103,12 +103,12 @@ func main() {
 
 	isTlsEnabled := *certFile != "" && *keyFile != ""
 	if isTlsEnabled {
-		log.Printf("Starting ClipSink v%s HTTPS server on https://%s ... 🔐", version, addr)
+		log.Printf("Starting %s %s HTTPS server on https://%s ... 🔐", me, version, addr)
 		if err := http.ListenAndServeTLS(addr, *certFile, *keyFile, nil); err != nil {
 			log.Fatalf("Could not start HTTPS server: %s\n", err)
 		}
 	} else {
-		log.Printf("Starting ClipSink v%s HTTP server on http://%s ... 🛰️", version, addr)
+		log.Printf("Starting %s %s HTTP server on http://%s ... 🛰️", me, version, addr)
 		log.Println("WARNING: Server is running in insecure HTTP mode. Use -cert-file and -key-file for HTTPS.")
 		if err := http.ListenAndServe(addr, nil); err != nil {
 			log.Fatalf("Could not start HTTP server: %s\n", err)
