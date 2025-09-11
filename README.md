@@ -174,7 +174,7 @@ Then, type:
 ```bash
 go-xbuild-go
 ```
-Look at [bin/](bin/) directory
+Look at `bin/' directory
 
 Please look at [Makefile](Makefile) for more info
 
