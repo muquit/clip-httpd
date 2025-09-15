@@ -33,9 +33,10 @@ func onReady() {
 	systray.SetTitle("📋 ClipHTTPD")
 	systray.SetTooltip("ClipHTTPD Clipboard Server")
 
-//	mStatus := systray.AddMenuItem("Status: Running", "Current status")
 	mStatus := systray.AddMenuItem(fmt.Sprintf("Status: Running, port %d", globalPort), "Current status")
-	mStatus.Disable() // make it non-clickable, just for display
+	mStatus.Disable() 
+	mStatus = systray.AddMenuItem(fmt.Sprintf("Port %d", globalPort), "Listening on Poert")
+	mStatus.Disable() 
 
 	systray.AddSeparator()
 
