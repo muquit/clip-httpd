@@ -21,6 +21,10 @@
     - [**1. Streamline Remote-to-Local Data Transfer**](#1-streamline-remote-to-local-data-transfer)
     - [**2. Securely Manage Secrets Across Machines**](#2-securely-manage-secrets-across-machines)
     - [**3. Unify Clipboards in Complex Terminal Setups**](#3-unify-clipboards-in-complex-terminal-setups)
+    - [**4. Accelerate Development and AI Workflows**](#4-accelerate-development-and-ai-workflows)
+    - [**5. Cross-Platform Consistency**](#5-cross-platform-consistency)
+    - [**6. Automation and Scripting**](#6-automation-and-scripting)
+    - [**7. Security Benefits**](#7-security-benefits)
   - [License is MIT](#license-is-mit)
   - [Authors](#authors)
 
@@ -65,12 +69,16 @@ URL:https://github.com/muquit/clip-httpd/
 Flags:
   -cert-file string
     	Path to TLS certificate file (enables HTTPS)
+  -copy-command string
+    	Custom command to copy data to clipboard
   -host string
     	Host address to bind the server to (default "0.0.0.0")
   -key-file string
     	Path to TLS key file (enables HTTPS)
   -port int
     	Port for the server to listen on (default 8881)
+  -systray
+    	Enable System Tray GUI
   -version
     	Print version and exit
 
@@ -147,11 +155,7 @@ The supplied [pbcopy.sh](pbcopy.sh) Bash script can be used at your remote machi
 
 ## FLOW
 
-![alt clip-httpd](images/clip-httpd.drawio.png "clip-httpd-go")
-
-**NOTE** This diagram is created in [mermaid](https://mermaid.js.org/) by [Google Gemini AI 2.5 Pro](https://gemini.google.com/app). I used [draw.io](https://app.diagrams.net/)
-desktop client to clean it up a little bit and exported to PNG. Please look at
-the [images/clip-httpd.mermaid](images/clip-httpd.mermaid) for [mermaid](https://mermaid.js.org/) version of the drawing.
+![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd-go")
 
 ## Installation
 ### Download
@@ -276,32 +280,82 @@ Example:
 
 ## Use Cases
 
-Here are some real-world scenarios where it shines:
+Here are some real-world scenarios where [clip-httpd](https://github.com/muquit/clip-httpd) shines:
 
-[clip-httpd](https://github.com/muquit/clip-httpd) excels at bridging the gap between remote command-line 
-environments and a local desktop. It eliminates common friction points in 
-cross-machine workflows.
+[clip-httpd](https://github.com/muquit/clip-httpd) excels at bridging the gap between remote command-line environments and a local desktop. It eliminates common friction points in cross-machine workflows.
 
 ---
+
 ### **1. Streamline Remote-to-Local Data Transfer**
-
-* **The Problem:** You need to get content—such as code, logs, or configuration files—from a remote server into a local GUI application like a browser, IDE, or messaging app. The traditional method involves a multi-step process: using `scp` or `sftp` to transfer the file, switching to your local machine, and then copying its content to your clipboard.
-
+* **The Problem:** You need to get content—such as code, logs, or configuration files—from a remote server into a local GUI application like a browser, IDE, or messaging app. The traditional method involves a multi-step process: using `scp` or `sftp` to transfer the file, switching to your local machine, and then copying its content to your clipboard. 
 * **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** This workflow is reduced to a single command executed on the remote server. By piping the content directly to the client script (`cat file.log | pbcopy.sh`), the text appears instantly on your local clipboard, ready to paste. This removes the friction of context switching and managing temporary files.
 
 ---
+
 ### **2. Securely Manage Secrets Across Machines**
-
 * **The Problem:** You're presented with a long, complex password, API token, or private key in a remote terminal. Manually typing this secret into a local application is slow, error-prone, and insecure, as it can be exposed through shoulder surfing or shell history.
+* **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** [clip-httpd](https://github.com/muquit/clip-httpd) provides a secure, encrypted channel (when using HTTPS) to move sensitive information. You can send the secret from the remote machine directly to your local clipboard without ever typing it, ensuring accuracy and protecting it from exposure.
 
-* **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** [clip-httpd](https://github.com/muquit/clip-httpd) provides a secure, encrypted channel to move sensitive information. You can send the secret from the remote machine directly to your local clipboard without ever typing it, ensuring accuracy and protecting it from exposure.
+Here is an example of sending an API key from a remote system's dumb terminal to the desktop clipboard:
+```bash
+# cat ~/api.key | jq -r .api_key | wc -c
+225
+# cat ~/api.key | jq -r .api_key | pbcopy.sh
+Successfully copied 225 bytes to clipboard.
+```
+The message `Successfully copied 225 bytes to clipboard.` came back from [clip-httpd](https://github.com/muquit/clip-httpd) running on the Mac system.
 
 ---
+
 ### **3. Unify Clipboards in Complex Terminal Setups**
+* **The Problem:** Standard clipboard integration often breaks inside nested terminal sessions. For example, copying text from `vim` running inside `tmux` over an `ssh` connection can be unreliable or require complex configuration. Different terminal multiplexers, SSH forwarding settings, and remote desktop solutions can interfere with each other.
+* **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** Because [clip-httpd](https://github.com/muquit/clip-httpd) operates over the network, it provides a completely independent and robust clipboard channel. It bypasses the terminal emulator's integration entirely, offering a single, reliable clipboard that works consistently, no matter how deep your terminal session is nested.
 
-* **The Problem:** Standard clipboard integration often breaks inside nested terminal sessions. For example, copying text from `vim` running inside `tmux` over an `ssh` connection can be unreliable or require complex configuration.
+---
 
-* **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** Because [clip-httpd](https://github.com/muquit/clip-httpd) operates over the network, it provides a completely independent and robust clipboard channel. It bypasses the terminal emulator's integration entirely, offering a single, reliable clipboard that works consistently, no matter how deep your terminal session is. 
+### **4. Accelerate Development and AI Workflows**
+* **The Problem:** When working with AI assistants or collaborating remotely, you frequently need to share code snippets, error messages, or configuration files from development servers. The traditional workflow involves copying files to your local machine first, then uploading or pasting them.
+* **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** Stream code directly from remote systems to your local clipboard for immediate use. Whether you're sharing a function with Claude, pasting error logs into a bug report, or moving configuration snippets between environments, [clip-httpd](https://github.com/muquit/clip-httpd) eliminates the intermediate steps.
+
+Example workflow:
+```bash
+# On remote server - send a specific function to clipboard
+sed -n '45,67p' myapp.go | pbcopy.sh
+
+# Or send an entire file
+cat config.yaml | pbcopy.sh
+
+# Now paste directly into AI chat, email, or IDE
+```
+
+---
+
+### **5. Cross-Platform Consistency**
+* **The Problem:** Different operating systems handle clipboard operations differently, and remote access tools (VNC, RDP, SSH) can introduce additional compatibility issues.
+* **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** Provides a unified clipboard API that works the same way across all platforms. Whether you're connecting from Linux to macOS, Windows to Linux, or any other combination, the clipboard behavior remains consistent and predictable.
+
+---
+
+### **6. Automation and Scripting**
+* **The Problem:** Automated scripts and CI/CD pipelines sometimes need to make information available to human operators, but there's no clean way to present data for manual review and copying.
+* **The [clip-httpd](https://github.com/muquit/clip-httpd) Solution:** Scripts can push relevant information (deployment URLs, generated passwords, error summaries) directly to the operator's clipboard, making it immediately available for use in other tools.
+
+```bash
+# In a deployment script
+echo "Deployment URL: https://staging-${BUILD_ID}.example.com" | pbcopy.sh
+# Operator can immediately paste the URL into a browser
+```
+
+---
+
+### **7. Security Benefits**
+
+All communication with [clip-httpd](https://github.com/muquit/clip-httpd) can be secured with:
+- **HTTPS encryption** using the `-cert-file` and `-key-file` options
+- **API key authentication** via the `X-Api-Key` header
+- **Network isolation** by binding to specific interfaces with the `-host` flag
+
+This makes it suitable for professional environments where security is paramount.
 
 ## License is MIT
 MIT License - See [LICENSE](LICENSE) file for details.
@@ -313,4 +367,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-11-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-14-2025</sub>

@@ -7,6 +7,7 @@ README_ORIG=./docs/README.md
 MAIN_MD=./docs/main.md
 README=./README.md
 BINARY=./clip-httpd
+BINARY_SYSTRAY=./clip-httpd-systray
 VERSION := $(shell cat VERSION)
 BUILD_OPTIONS = -ldflags "-s -w"
 MARKDOWC_TOC=markdown-toc-go
@@ -23,13 +24,17 @@ build:
 	@/bin/rm -f bin/*
 	go build $(BUILD_OPTIONS) -o $(BINARY)
 
+native:
+	@echo "*** Compiling $(BINARY) $(VERSION) with systray support ...."
+	go build $(BUILD_OPTIONS) -tags systray -o $(BINARY_SYSTRAY)
+
 # cross compile for various platforms
 # requires go-xbuild-go from 
 # https://github.com/muquit/go-xbuild-go
 build_all:
 	@echo "*** Cross Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -rf ./bin
-	go-xbuild-go
+	go-xbuild-go -additional-files pbcopy.sh
 
 release:
 	go-xbuild-go -release

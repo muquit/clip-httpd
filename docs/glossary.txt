@@ -13,7 +13,7 @@ CLIPBOARD   [clipboard](https://github.com/atotto/clipboard)
 CURL        [curl](https://curl.se/)
 URL         https://github.com/muquit/clip-httpd
 PBCOPY      [pbcopy.sh](pbcopy.sh)
-FLOW        ![alt clip-httpd](images/clip-httpd.drawio.png "clip-httpd-go")
+FLOW        ![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd-go")
 CLIPSINK    [clip-httpd](https://github.com/muquit/clip-httpd)
 OPENSSL     [openssl](https://www.openssl.org/)
 MAILSEND    [mailsend](https://github.com/muquit/mailsend)

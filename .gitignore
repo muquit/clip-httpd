@@ -2,4 +2,5 @@
 *.bkp
 *.bak
 /clip-httpd
+/clip-httpd-systray
 /bin/

@@ -39,7 +39,3 @@ The supplied @PBCOPY@ Bash script can be used at your remote machine as a client
 ## FLOW
 
 @FLOW@
-
-**NOTE** This diagram is created in @MERMAID@ by @GEMINI_PRO@. I used @DRAWIO@
-desktop client to clean it up a little bit and exported to PNG. Please look at
-the @IMG@ for @MERMAID@ version of the drawing.
