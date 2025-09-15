@@ -144,7 +144,7 @@ func main() {
 	if *useSystray {
 		go startServer() // start the server in background
 		log.Printf("Initialize systray ...")
-		initSystray(sigChan)
+		initSystray(sigChan, *port)
 	} else {
 		go func() {
 			sig := <-sigChan
