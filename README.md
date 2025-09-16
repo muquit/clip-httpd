@@ -23,8 +23,8 @@
 
 ## Introduction
 [clip-httpd](https://github.com/muquit/clip-httpd) is a simple, secure, cross-platform clipboard server written in 
-[Go](https://go.dev/). I use it to paste `text` to my Laptop/workstation clipboard from remote
-systems securely.
+[Go](https://go.dev/). I use it to paste `text` to my Laptop/workstation's clipboard from remote
+systems securely without pain of fumbling with mouse.
 
 It listens on a TCP port for incoming HTTPS requests containing text 
 data and copies that text to the system clipboard. Client authentication 
