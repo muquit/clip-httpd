@@ -173,7 +173,8 @@ The supplied [pbcopy.sh](pbcopy.sh) Bash script can be used at your remote machi
 ### Download
 * Download pre-compiled binaries from [Releases](https://github.com/muquit/clip-httpd/releases) page
 
-* Please look at [How to use](#how-to-use)
+* Please look at [How to use](#how-to-use) and [Examples](#examples) sections
+for details.
 
 ### Building from source
 

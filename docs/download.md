@@ -2,7 +2,8 @@
 ### Download
 * Download pre-compiled binaries from @RELEASES@ page
 
-* Please look at [How to use](#how-to-use)
+* Please look at [How to use](#how-to-use) and [Examples](#examples) sections
+for details.
 
 ### Building from source
 
