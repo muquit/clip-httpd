@@ -55,8 +55,7 @@ to clipboard which supports Mac, Windows and Linux. I use [curl](https://curl.se
 portable client as well but I do not need it right now.
 
 I'm sure there are similar tools with many features that exist, but my need
-is simple. It took like 10 minutes with [Google Gemini AI 2.5 Pro](https://gemini.google.com/app) to write it and 
-it works exactly the way I need.
+is simple. 
 
 ## Usage
 ```

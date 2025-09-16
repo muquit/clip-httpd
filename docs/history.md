@@ -17,5 +17,4 @@ to clipboard which supports Mac, Windows and Linux. I use @CURL@ as I have
 portable client as well but I do not need it right now.
 
 I'm sure there are similar tools with many features that exist, but my need
-is simple. It took like 10 minutes with @GEMINI_PRO@ to write it and 
-it works exactly the way I need.
+is simple. 
