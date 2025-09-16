@@ -28,6 +28,7 @@ import (
 	"os/exec"
 	"syscall"
 	"os/signal"
+	"runtime"
 
 	"github.com/atotto/clipboard"
 	"github.com/joho/godotenv"
@@ -92,7 +93,8 @@ func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(),
 			"%s %s - A simple, secure, cross-platform clipboard server.\n", me, version)
-		fmt.Fprintf(flag.CommandLine.Output(), "URL:%s/\n\n", url)
+		fmt.Printf("Compiled with go version: %s\n", runtime.Version())
+		fmt.Fprintf(flag.CommandLine.Output(), "URL: %s/\n\n", url)
 		fmt.Fprintf(flag.CommandLine.Output(), "Flags:\n")
 		flag.PrintDefaults()
 		fmt.Fprintf(flag.CommandLine.Output(), "\n** Specify server secret with env variable CLIP_HTTPD_APIKEY ***\n")

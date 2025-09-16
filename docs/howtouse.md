@@ -14,7 +14,7 @@ export @API_KEY@='your_secret'
 clip-httpd -cert cert.pem -key key.pem
 ```
 
-### Copy client to your remote hosts
+### Run copy client from your remote hosts
 
 Look at the sample client @PBCOPY@ script. It uses @CURL@. 
 I use `pbcopy` command on mac, hence I named it @PBCOPY@. 

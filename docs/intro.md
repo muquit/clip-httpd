@@ -1,6 +1,9 @@
 ## Introduction
 @CLIPSINK@ is a simple, secure, cross-platform clipboard server written in 
-@GO@. It listens on a TCP port for incoming HTTPS requests containing text 
+@GO@. I use it to paste `text` to my Laptop/workstation clipboard from remote
+systems securely.
+
+It listens on a TCP port for incoming HTTPS requests containing text 
 data and copies that text to the system clipboard. Client authentication 
 is required using a secret API key for secure communication with the server.
 This allows you to securely update the system clipboard of your desktop 

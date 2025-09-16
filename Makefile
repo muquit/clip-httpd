@@ -9,7 +9,7 @@ README=./README.md
 BINARY=./clip-httpd
 BINARY_SYSTRAY=./clip-httpd-systray
 VERSION := $(shell cat VERSION)
-BUILD_OPTIONS = -ldflags "-s -w"
+BUILD_OPTIONS = -ldflags "-s -w" -buildvcs=false
 MARKDOWC_TOC=markdown-toc-go
 # requires markdown-toc-go v 1.0.3+
 GLOSSARY_FILE=./docs/glossary.txt

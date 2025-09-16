@@ -1,6 +1,7 @@
 *.pem
 *.bkp
 *.bak
+/docs/usecase.md
 /clip-httpd
 /clip-httpd-systray
 /bin/

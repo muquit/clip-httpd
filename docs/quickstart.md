@@ -20,4 +20,9 @@ Get up and running in just a few steps:
 echo "Hello from remote!" | ./pbcopy.sh -h <your_desktop_ip> -p 8881
 ./pbcopy.sh -h <your_desktop_ip> -p 8881 < file.txt
 ```
+4. ** Desktop Integration **
+```bash
+./clip-httpd-systray -systray -cert cert.pem -key key.pem
+```
 
+Please look @EXAMPLES@ section for varous usecases

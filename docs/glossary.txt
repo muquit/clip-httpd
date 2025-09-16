@@ -1,3 +1,4 @@
+EXAMPLES    [Examples](#examples)
 API_KEY     CLIP_HTTPD_APIKEY
 GO_XBUILD   [go-xbuild-go](https://github.com/muquit/go-xbuild-go)
 MAKEFILE    [Makefile](Makefile)
