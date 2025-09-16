@@ -2,7 +2,8 @@
 
 Get up and running in just a few steps:
 
-1. **Generate a self-signed certificate (once per desktop):**
+1. **Generate a self-signed certificate (once per desktop where clip-httpd
+   will be running):**
 ```bash
    openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 3650 -nodes
 ```
