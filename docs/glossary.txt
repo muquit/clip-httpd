@@ -15,6 +15,7 @@ CURL        [curl](https://curl.se/)
 URL         https://github.com/muquit/clip-httpd
 PBCOPY      [pbcopy.sh](pbcopy.sh)
 FLOW        ![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd-go")
+TOP_BAR     ![alt top_bar](images/top_bar.png "mac top bar")
 CLIPSINK    [clip-httpd](https://github.com/muquit/clip-httpd)
 OPENSSL     [openssl](https://www.openssl.org/)
 MAILSEND    [mailsend](https://github.com/muquit/mailsend)
