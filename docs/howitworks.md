@@ -5,6 +5,8 @@ The @CLIPSINK@ binary is the server that runs on the machine whose
 clipboard you want to control, like your desktop. The client @PBCOPY@ is a small 
 script runs on a remote machine that sends text to the server.
 
+@FLOW@
+
 -----
 
 ### Server (Text Receiver)
@@ -44,6 +46,3 @@ The supplied @PBCOPY@ Bash script can be used at your remote machine as a client
 
 -----
 
-## FLOW
-
-@FLOW@

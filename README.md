@@ -7,7 +7,6 @@
   - [How it works](#how-it-works)
     - [Server (Text Receiver)](#server-text-receiver)
     - [Client (Text Sender)](#client-text-sender)
-  - [FLOW](#flow)
   - [Installation](#installation)
     - [Download](#download)
     - [Building from source](#building-from-source)
@@ -128,6 +127,8 @@ The [clip-httpd](https://github.com/muquit/clip-httpd) binary is the server that
 clipboard you want to control, like your desktop. The client [pbcopy.sh](pbcopy.sh) is a small 
 script runs on a remote machine that sends text to the server.
 
+![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd-go")
+
 -----
 
 ### Server (Text Receiver)
@@ -167,9 +168,6 @@ The supplied [pbcopy.sh](pbcopy.sh) Bash script can be used at your remote machi
 
 -----
 
-## FLOW
-
-![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd-go")
 
 ## Installation
 ### Download
