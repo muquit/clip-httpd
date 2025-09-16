@@ -34,7 +34,10 @@ native:
 build_all:
 	@echo "*** Cross Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -rf ./bin
-	go-xbuild-go -additional-files pbcopy.sh
+	go-xbuild-go -build-args '$(BUILD_OPTIONS)' -additional-files pbcopy.sh
+
+build_native:
+
 
 release:
 	go-xbuild-go -release
