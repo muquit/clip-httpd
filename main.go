@@ -30,12 +30,12 @@ import (
 	"os/signal"
 	"runtime"
 
+	"github.com/muquit/clip-httpd/pkg/version"
 	"github.com/atotto/clipboard"
 	"github.com/joho/godotenv"
 )
 
 const (
-	version = "v1.0.1"
 	me      = "clip-httpd"
 	url     = "https://github.com/muquit/clip-httpd"
 )
@@ -92,7 +92,7 @@ func clipboardHandler(apiKey string, copyCommand string) http.HandlerFunc {
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(),
-			"%s %s - A simple, secure, cross-platform clipboard server.\n", me, version)
+			"%s %s - A simple, secure, cross-platform clipboard server.\n", me, version.Get())
 		fmt.Printf("Compiled with go version: %s\n", runtime.Version())
 		fmt.Fprintf(flag.CommandLine.Output(), "URL: %s/\n\n", url)
 		fmt.Fprintf(flag.CommandLine.Output(), "Flags:\n")
@@ -110,7 +110,7 @@ func main() {
 	flag.Parse()
 
 	if *versionFlag {
-		fmt.Printf("%s %s %s\n", me, version, url)
+		fmt.Printf("%s %s %s\n", me, version.Get(), url)
 		os.Exit(0)
 	}
 	apiKey := os.Getenv("CLIP_HTTPD_APIKEY")
@@ -128,12 +128,12 @@ func main() {
 	// define server startup func
 	startServer := func() {
 		if isTlsEnabled {
-			log.Printf("Starting %s %s HTTPS server on https://%s ... 🔐", me, version, addr)
+			log.Printf("Starting %s %s HTTPS server on https://%s ... 🔐", me, version.Get(), addr)
 			if err := http.ListenAndServeTLS(addr, *certFile, *keyFile, nil); err != nil {
 				log.Fatalf("Could not start HTTPS server: %s\n", err)
 			}
 		} else {
-			log.Printf("Starting %s %s HTTP server on http://%s ... 🛰️", me, version, addr)
+			log.Printf("Starting %s %s HTTP server on http://%s ... 🛰️", me, version.Get(), addr)
 			log.Println("WARNING: Server is running in insecure HTTP mode. Use -cert-file and -key-file for HTTPS.")
 			if err := http.ListenAndServe(addr, nil); err != nil {
 				log.Fatalf("Could not start HTTP server: %s\n", err)
@@ -146,7 +146,7 @@ func main() {
 	if *useSystray {
 		go startServer() // start the server in background
 		log.Printf("Initialize systray ...")
-		initSystray(sigChan, *port)
+		initSystray(sigChan, *port, version.Get())
 	} else {
 		go func() {
 			sig := <-sigChan
@@ -166,12 +166,12 @@ func main() {
 
 
 	if isTlsEnabled {
-		log.Printf("Starting %s %s HTTPS server on https://%s ... 🔐", me, version, addr)
+		log.Printf("Starting %s %s HTTPS server on https://%s ... 🔐", me, version.Get(), addr)
 		if err := http.ListenAndServeTLS(addr, *certFile, *keyFile, nil); err != nil {
 			log.Fatalf("Could not start HTTPS server: %s\n", err)
 		}
 	} else {
-		log.Printf("Starting %s %s HTTP server on http://%s ... 🛰️", me, version, addr)
+		log.Printf("Starting %s %s HTTP server on http://%s ... 🛰️", me, version.Get(), addr)
 		log.Println("WARNING: Server is running in insecure HTTP mode. Use -cert-file and -key-file for HTTPS.")
 		if err := http.ListenAndServe(addr, nil); err != nil {
 			log.Fatalf("Could not start HTTP server: %s\n", err)

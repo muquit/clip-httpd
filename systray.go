@@ -14,12 +14,14 @@ import (
 
 var globalSigChan chan os.Signal
 var globalPort int
+var globalVersion string
 
-func initSystray(sigChan chan os.Signal, port int) {
+func initSystray(sigChan chan os.Signal, port int, version string) {
 	fmt.Println("Starting system tray mode...")
 	
 	globalSigChan = sigChan
 	globalPort = port
+	globalVersion = version
 	
 	systray.Run(onReady, onExit)
 }
@@ -33,9 +35,11 @@ func onReady() {
 	systray.SetTitle("📋 ClipHTTPD")
 	systray.SetTooltip("ClipHTTPD Clipboard Server")
 
-	mStatus := systray.AddMenuItem(fmt.Sprintf("Status: Running"), "Current status")
+	mStatus := systray.AddMenuItem(fmt.Sprintf("Version: %s", globalVersion), "Version")
 	mStatus.Disable() 
-	mStatus = systray.AddMenuItem(fmt.Sprintf("Port %d", globalPort), "Listening on Port")
+	mStatus = systray.AddMenuItem(fmt.Sprintf("Status: Running"), "Current status")
+	mStatus.Disable() 
+	mStatus = systray.AddMenuItem(fmt.Sprintf("Port: %d", globalPort), "Listening on Port")
 	mStatus.Disable() 
 
 	systray.AddSeparator()
