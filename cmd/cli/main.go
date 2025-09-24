@@ -10,31 +10,41 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"runtime"
+
+	"github.com/muquit/clip-httpd/pkg/version"
 )
 
 // Default host and port values
 const (
+	me          = "cbcopy"
 	defaultHost = "192.168.1.72"
 	defaultPort = "8881"
 	apiKeyEnv   = "CLIP_HTTPD_APIKEY"
+	url         = "https://github.com/muquit/clip-httpd"
 )
 
 func main() {
 	// 1. Define and parse command-line flags
 	host := flag.String("h", defaultHost, "The hostname or IP of the clip-httpd server.")
 	port := flag.String("p", defaultPort, "The port number of the clip-httpd server.")
+	versionFlag := flag.Bool("version", false, "Print version and exit")
 	
     // --- UPDATED SECTION START ---
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, `A remote clipboard copy client for clip-httpd.
 
-This tool reads from standard input and sends the data to a clip-httpd server.
+This tool reads from standard input and sends the data 
+to a clip-httpd server.
+
+Project URL: %s
+Compiled with go version: %s
 
 Usage:
-  pbcopy [-h host] [-p port]
+  cbcopy [-h host] [-p port]
 
 Options:
-`)
+`, url, runtime.Version())
 		flag.PrintDefaults()
 		fmt.Fprintf(os.Stderr, `
 Required Environment Variable:
@@ -44,23 +54,26 @@ Examples:
 
   # On Bash (Linux/macOS)
   export %s="your-secret-key"
-  echo "Hello from Bash" | pbcopy
-  cat file.txt | pbcopy -h 192.168.1.100
+  echo "hello from cbcopy-httpd!" | cbcopy
+  cat file.txt | cbcopy -h 192.168.1.100
 
   # On Windows Command Prompt
   set %s="your-secret-key"
-  echo Hello from CMD | pbcopy
-  type file.txt | pbcopy -h 192.168.1.100
+  echo Hello from CMD | cbcopy
+  type file.txt | cbcopy -h 192.168.1.100
 
   # On PowerShell
   $env:%s = "your-secret-key"
-  "Hello from PowerShell" | pbcopy
-  Get-Content file.txt | pbcopy -h 192.168.1.100
+  "Hello from PowerShell" | cbcopy
+  Get-Content file.txt | cbcopy -h 192.168.1.100
 `, apiKeyEnv, apiKeyEnv, apiKeyEnv, apiKeyEnv)
 	}
-    // --- UPDATED SECTION END ---
 
 	flag.Parse()
+    if *versionFlag {
+        fmt.Printf("%s %s %s\n", me, version.Get(), url)
+        os.Exit(0)
+    }
 
 	// 2. Security Check: Get API key from environment variable
 	apiKey := os.Getenv(apiKeyEnv)

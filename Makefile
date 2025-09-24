@@ -25,6 +25,9 @@ build:
 	@/bin/rm -f bin/*
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY)
 
+cli:
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy ./cmd/cli
+
 native:
 	@echo "*** Compiling $(BINARY) $(VERSION) with systray support ...."
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o $(BINARY_SYSTRAY)
