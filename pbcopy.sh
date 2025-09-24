@@ -58,15 +58,15 @@ done
 
 # --- Security Check ---
 # Exit if the API key environment variable is not set.
-if [[ -z "${CLIPSINK_APIKEY}" ]]; then
-  echo "Error: The CLIPSINK_APIKEY environment variable is not set." >&2
+if [[ -z "${CLIP_HTTPD_APIKEY}" ]]; then
+  echo "Error: The CLIP_HTTPD_APIKEY environment variable is not set." >&2
   echo "Please set it before running this script." >&2
   exit 1
 fi
 
 # --- Main Execution ---
 # Construct the server URL from the host and port.
-CLIPSINK_SERVER="https://${HOST}:${PORT}"
+CLIP_HTTPD_APIKEY_SERVER="https://${HOST}:${PORT}"
 
 # Execute curl, reading from standard input (@-) and sending to the server.
-curl --silent --show-error -k -H "X-Api-Key: ${CLIPSINK_APIKEY}" --data-binary @- "${CLIPSINK_SERVER}"
+curl --silent --show-error -k -H "X-Api-Key: ${CLIP_HTTPD_APIKEY}" --data-binary @- "${CLIP_HTTPD_APIKEY_SERVER}"
