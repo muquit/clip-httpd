@@ -28,6 +28,9 @@ build:
 cli:
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy ./cmd/cli
 
+cli-linux:
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy-linux ./cmd/cli
+
 native:
 	@echo "*** Compiling $(BINARY) $(VERSION) with systray support ...."
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o $(BINARY_SYSTRAY)

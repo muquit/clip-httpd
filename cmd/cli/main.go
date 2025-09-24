@@ -126,5 +126,12 @@ Examples:
 	if resp.StatusCode != http.StatusOK {
 		fmt.Fprintf(os.Stderr, "Error: Server responded with status: %s\n", resp.Status)
 		os.Exit(1)
+	} else {
+		body, err := io.ReadAll(resp.Body)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error reading successful response body: %v\n", err)
+			os.Exit(1)
+		}
+	    fmt.Fprintf(os.Stderr, "Server %s Response: %s", *host, string(body))
 	}
 }
