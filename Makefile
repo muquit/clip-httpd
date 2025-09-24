@@ -7,6 +7,7 @@ README_ORIG=./docs/README.md
 MAIN_MD=./docs/main.md
 README=./README.md
 BINARY=./clip-httpd
+CLIENT_BINARY=./cbcopy
 BINARY_SYSTRAY=./clip-httpd-systray
 VERSION := $(shell cat VERSION)
 LDFLAGS := -ldflags "-w -s -X 'github.com/muquit/clip-httpd/pkg/version.Version=$(VERSION)'"
@@ -26,7 +27,7 @@ build:
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY)
 
 cli:
-	go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy ./cmd/cli
+	CGO_ENABLED=0 go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy ./cmd/cli
 
 cli-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy-linux ./cmd/cli
@@ -34,6 +35,10 @@ cli-linux:
 native:
 	@echo "*** Compiling $(BINARY) $(VERSION) with systray support ...."
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o $(BINARY_SYSTRAY)
+
+show_commit_info:
+	go version -m $(BINARY)
+	go version -m $(CLIENT_BINARY)
 
 # cross compile for various platforms
 # requires go-xbuild-go from 
