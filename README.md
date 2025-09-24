@@ -58,7 +58,7 @@ is simple.
 
 ## Usage
 ```
-clip-httpd v1.0.1 - A simple, secure, cross-platform clipboard server.
+clip-httpd v1.0.2 - A simple, secure, cross-platform clipboard server.
 URL: https://github.com/muquit/clip-httpd/
 
 Flags:
@@ -112,7 +112,7 @@ Here's a screenshot of a segment of my Mac's top menu bar:
 
 ![alt top_bar](images/top_bar.png "mac top bar")
 
-Please look [Examples](#examples) section for varous usecases
+Please look [Examples](#examples) section for various usecases
 
 ## Version
 The current version is 1.0.1
@@ -133,7 +133,7 @@ script runs on a remote machine that sends text to the server.
 
 ### Server (Text Receiver)
 
-The [clip-httpd](https://github.com/muquit/clip-httpd) server is a specialized web server that performs a few key tasks:
+The [clip-httpd](https://github.com/muquit/clip-httpd) server is a simple web server that performs a few key tasks:
 
 1.  **Listens for Connections:** It starts up and listens on a specific 
 network port (e.g., `8881`) for incoming connections.
@@ -147,10 +147,10 @@ It compares the key in the header to its own secret key. If they don't match, th
 
 4.  **Receives the Text:** If authentication is successful, the server reads the raw text data from the body of the `POST` request.
 
-5.  **Updates the Clipboard:** This is the final and most important step. The server uses a native [Go](https://go.dev/) library 
+5.  **Updates the Clipboard:** The server uses a native [Go](https://go.dev/) library 
 called [clipboard](https://github.com/atotto/clipboard) to interact directly with the operating system's 
 clipboard API with installed clipboard copy tools. But you can also use the flag
-`-copy-commad` to supply a custom copy command.
+`-copy-commad` to supply a custom clipboard copy command.
 
 -----
 
@@ -355,4 +355,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-15-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-24-2025</sub>

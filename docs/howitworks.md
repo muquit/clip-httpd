@@ -11,7 +11,7 @@ script runs on a remote machine that sends text to the server.
 
 ### Server (Text Receiver)
 
-The @CLIPSINK@ server is a specialized web server that performs a few key tasks:
+The @CLIPSINK@ server is a simple web server that performs a few key tasks:
 
 1.  **Listens for Connections:** It starts up and listens on a specific 
 network port (e.g., `8881`) for incoming connections.
@@ -25,10 +25,10 @@ It compares the key in the header to its own secret key. If they don't match, th
 
 4.  **Receives the Text:** If authentication is successful, the server reads the raw text data from the body of the `POST` request.
 
-5.  **Updates the Clipboard:** This is the final and most important step. The server uses a native @GO@ library 
+5.  **Updates the Clipboard:** The server uses a native @GO@ library 
 called @CLIPBOARD@ to interact directly with the operating system's 
 clipboard API with installed clipboard copy tools. But you can also use the flag
-`-copy-commad` to supply a custom copy command.
+`-copy-commad` to supply a custom clipboard copy command.
 
 -----
 

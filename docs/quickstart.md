@@ -30,4 +30,4 @@ Here's a screenshot of a segment of my Mac's top menu bar:
 
 @TOP_BAR@
 
-Please look @EXAMPLES@ section for varous usecases
+Please look @EXAMPLES@ section for various usecases

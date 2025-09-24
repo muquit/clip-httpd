@@ -1,6 +1,6 @@
 ## Usage
 ```
-clip-httpd v1.0.1 - A simple, secure, cross-platform clipboard server.
+clip-httpd v1.0.2 - A simple, secure, cross-platform clipboard server.
 URL: https://github.com/muquit/clip-httpd/
 
 Flags:
