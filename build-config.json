@@ -1,0 +1,23 @@
+{
+  "project_name": "clip-httpd",
+  "version_file": "VERSION",
+  "platforms_file": "platforms.txt",
+  "default_ldflags": "-s -w -X 'github.com/muquit/clip-httpd/pkg/version.Version=v1.0.1' -X 'main.buildTime={{.BuildTime}}'",
+  "default_build_flags": "-trimpath",
+  "global_additional_files": [
+    "README.md",
+    "LICENSE"
+  ],
+  "targets": [
+    {
+      "name": "cbcopy",
+      "path": "./cmd/cli",
+      "output_name": "cbcopy"
+    },
+    {
+        "name": "clip-httpd",
+        "path": "./cmd/server",
+        "output_name": "clip-httpd"
+    }
+  ]
+}
