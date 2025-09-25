@@ -16,7 +16,9 @@ MARKDOWC_TOC=markdown-toc-go
 # requires markdown-toc-go v 1.0.3+
 GLOSSARY_FILE=./docs/glossary.txt
 USAGE_FILE=./docs/usage.md
-PBCOPY_FILE=./docs/pbcopy.txt
+CBCOPY_FILE=./docs/cbcopy.txt
+SERVER=./cmd/server
+CLIENT=./cmd/cli
 
 
 all: build build_all doc
@@ -24,13 +26,13 @@ all: build build_all doc
 build: cli
 	@echo "*** Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -f bin/*
-	go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY)
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY) $(SERVER)
 
 server:
-	CGO_ENABLED=0 go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY) ./cmd/server
+	CGO_ENABLED=0 go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY) $(SERVER)
 
 cli:
-	CGO_ENABLED=0 go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy ./cmd/cli
+	CGO_ENABLED=0 go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy $(CLIENT)
 
 cli-linux:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy-linux ./cmd/cli
@@ -38,6 +40,20 @@ cli-linux:
 native:
 	@echo "*** Compiling $(BINARY) $(VERSION) with systray support ...."
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o $(BINARY_SYSTRAY)
+
+# native systray based server, uses CGO
+# therefore has to be compiled in each system
+server-darwin-arm64:
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
+		clip-httpd-systray-$(VERSION)-darwin-arm64 $(SERVER)
+
+server-linux-amd64:
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
+		clip-httpd-systray-$(VERSION)-linux-amd64 $(SERVER)
+
+server-windows-amd64:
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
+		clip-httpd-systray-$(VERSION)-windows-amd64 $(SERVER)
 
 show_commit_info:
 	go version -m $(BINARY)
@@ -49,7 +65,7 @@ show_commit_info:
 build_all:
 	@echo "*** Cross Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -rf ./bin
-	go-xbuild-go -build-args '$(BUILD_OPTIONS)' -additional-files pbcopy.sh
+	go-xbuild-go -build-args '$(BUILD_OPTIONS)' -additional-files cbcopy.sh
 
 build_native:
 
@@ -69,9 +85,9 @@ gen_usage: build
 	@echo '```' >> $(USAGE_FILE)
 	@${BINARY} -h 2>> $(USAGE_FILE)
 	@echo '```' >> $(USAGE_FILE)
-	@echo '```bash' > $(PBCOPY_FILE)
-	@./pbcopy.sh -h >> $(PBCOPY_FILE)
-	@echo '```' >> $(PBCOPY_FILE)
+	@echo '```bash' > $(CBCOPY_FILE)
+	@./cbcopy.sh -h >> $(CBCOPY_FILE)
+	@echo '```' >> $(CBCOPY_FILE)
 
 clean:
 	/bin/rm -f $(BINARY)

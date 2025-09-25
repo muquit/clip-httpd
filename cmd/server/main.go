@@ -97,7 +97,7 @@ func main() {
 		fmt.Fprintf(flag.CommandLine.Output(), "URL: %s/\n\n", url)
 		fmt.Fprintf(flag.CommandLine.Output(), "Flags:\n")
 		flag.PrintDefaults()
-		fmt.Fprintf(flag.CommandLine.Output(), "\n** Specify server secret with env variable CLIP_HTTPD_APIKEY ***\n")
+		fmt.Fprintf(flag.CommandLine.Output(), "\n** Specify server secret with env variable CLIP_HTTPD_API_KEY ***\n")
 	}
 	host := flag.String("host", "0.0.0.0", "Host address to bind the server to")
 	port := flag.Int("port", 8881, "Port for the server to listen on")
@@ -113,13 +113,13 @@ func main() {
 		fmt.Printf("%s %s %s\n", me, version.Get(), url)
 		os.Exit(0)
 	}
-	apiKey := os.Getenv("CLIP_HTTPD_APIKEY")
+	apiKey := os.Getenv("CLIP_HTTPD_API_KEY")
 	if apiKey == "" {
 		_ = godotenv.Load()
-		apiKey = os.Getenv("CLIP_HTTPD_APIKEY")
+		apiKey = os.Getenv("CLIP_HTTPD_API_KEY")
 	}
 	if apiKey == "" {
-		log.Fatal("Error: API key not set. Set the CLIP_HTTPD_APIKEY environment variable or create a .env file.")
+		log.Fatal("Error: API key not set. Set the CLIP_HTTPD_API_KEY environment variable or create a .env file.")
 	}
 	addr := fmt.Sprintf("%s:%d", *host, *port)
 	http.HandleFunc("/", clipboardHandler(apiKey, *copyCommand))

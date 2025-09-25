@@ -1,0 +1,27 @@
+```bash
+A remote clipboard copy client for clip-httpd uses curl.
+
+This script reads from standard input and sends the data to a clip-httpd 
+server using curl. A native cros-platform stand alone client cbcopy is
+also available.
+
+Usage:
+  cbcopy.sh [-h host] [-p port]
+
+Options:
+  -h    The hostname or IP address of the clip-httpd server (default: 192.168.1.72)
+  -p    The port number of the clip-httpd server (default: 8881)
+
+Required Environment Variable:
+  CLIP_HTTPD_API_KEY   The secret API key for authentication.
+
+Example:
+  export CLIP_HTTPD_API_KEY="your-secret-key"
+  echo "Hello from remote" | cbcopy.sh
+  cat file.txt | cbcopy.sh -h 192.168.1.100 -p 9000
+  cbcopy.sh < file.txt
+  # copy an image to clipboard
+  cat file.png | base64 | cbcopy.sh
+  To decode image from clipboard on mac using pbpaste
+      pbpaste | base64 -d > file.png
+```

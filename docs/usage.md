@@ -19,5 +19,5 @@ Flags:
   -version
     	Print version and exit
 
-** Specify server secret with env variable CLIP_HTTPD_APIKEY ***
+** Specify server secret with env variable CLIP_HTTPD_API_KEY ***
 ```

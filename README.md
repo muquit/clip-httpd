@@ -77,7 +77,7 @@ Flags:
   -version
     	Print version and exit
 
-** Specify server secret with env variable CLIP_HTTPD_APIKEY ***
+** Specify server secret with env variable CLIP_HTTPD_API_KEY ***
 ```
 
 ## Quick Start
@@ -270,25 +270,31 @@ Look at the sample client [pbcopy.sh](pbcopy.sh) script. It uses [curl](https://
 I use `pbcopy` command on mac, hence I named it [pbcopy.sh](pbcopy.sh). 
 
 ```bash
-A remote clipboard copy client for clip-httpd.
+A remote clipboard copy client for clip-httpd uses curl.
 
-This script reads from standard input and sends the data to a clip-httpd server.
+This script reads from standard input and sends the data to a clip-httpd 
+server using curl. A native cros-platform stand alone client cbcopy is
+also available.
 
 Usage:
-  pbcopy.sh [-h host] [-p port]
+  cbcopy.sh [-h host] [-p port]
 
 Options:
   -h    The hostname or IP address of the clip-httpd server (default: 192.168.1.72)
   -p    The port number of the clip-httpd server (default: 8881)
 
 Required Environment Variable:
-  CLIP_HTTPD_APIKEY   The secret API key for authentication.
+  CLIP_HTTPD_API_KEY   The secret API key for authentication.
 
 Example:
-  export CLIP_HTTPD_APIKEY="your-secret-key"
-  echo "Hello from remote" | pbcopy.sh
-  cat file.txt | pbcopy.sh -h 192.168.1.100 -p 9000
-  pbcopy.sh < file.txt
+  export CLIP_HTTPD_API_KEY="your-secret-key"
+  echo "Hello from remote" | cbcopy.sh
+  cat file.txt | cbcopy.sh -h 192.168.1.100 -p 9000
+  cbcopy.sh < file.txt
+  # copy an image to clipboard
+  cat file.png | base64 | cbcopy.sh
+  To decode image from clipboard on mac using pbpaste
+      pbpaste | base64 -d > file.png
 ```
 
 ## Examples
@@ -355,4 +361,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-24-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-25-2025</sub>
