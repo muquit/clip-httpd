@@ -21,10 +21,13 @@ PBCOPY_FILE=./docs/pbcopy.txt
 
 all: build build_all doc
 
-build:
+build: cli
 	@echo "*** Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -f bin/*
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY)
+
+server:
+	CGO_ENABLED=0 go build $(BUILD_OPTIONS) $(LDFLAGS) -o $(BINARY) ./cmd/server
 
 cli:
 	CGO_ENABLED=0 go build $(BUILD_OPTIONS) $(LDFLAGS) -o cbcopy ./cmd/cli
