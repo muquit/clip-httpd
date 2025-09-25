@@ -15,13 +15,15 @@ import (
 var globalSigChan chan os.Signal
 var globalPort int
 var globalVersion string
+var globalIsTlsEnable bool
 
-func initSystray(sigChan chan os.Signal, port int, version string) {
+func initSystray(sigChan chan os.Signal, port int, isTlsEnabled bool, version string) {
 	fmt.Println("Starting system tray mode...")
 	
 	globalSigChan = sigChan
 	globalPort = port
 	globalVersion = version
+	globalIsTlsEnable = isTlsEnabled
 	
 	systray.Run(onReady, onExit)
 }
@@ -37,7 +39,14 @@ func onReady() {
 
 	mStatus := systray.AddMenuItem(fmt.Sprintf("Version: %s", globalVersion), "Version")
 	mStatus.Disable() 
+	protocol := "http"
+	if globalIsTlsEnable {
+		protocol = "https"
+	}
+	
 	mStatus = systray.AddMenuItem(fmt.Sprintf("Status: Running"), "Current status")
+	mStatus.Disable() 
+	mStatus = systray.AddMenuItem(fmt.Sprintf("Protocol: %s", protocol), "Protocol")
 	mStatus.Disable() 
 	mStatus = systray.AddMenuItem(fmt.Sprintf("Port: %d", globalPort), "Listening on Port")
 	mStatus.Disable() 

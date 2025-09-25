@@ -146,7 +146,7 @@ func main() {
 	if *useSystray {
 		go startServer() // start the server in background
 		log.Printf("Initialize systray ...")
-		initSystray(sigChan, *port, version.Get())
+		initSystray(sigChan, *port, isTlsEnabled, version.Get())
 	} else {
 		go func() {
 			sig := <-sigChan
