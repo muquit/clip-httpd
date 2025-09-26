@@ -47,6 +47,10 @@ server-darwin-arm64:
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
 		clip-httpd-systray-$(VERSION)-darwin-arm64 $(SERVER)
 
+server-darwin-amd64:
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
+		clip-httpd-systray-$(VERSION)-darwin-amd64 $(SERVER)
+
 server-linux-amd64:
 	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
 		clip-httpd-systray-$(VERSION)-linux-amd64 $(SERVER)

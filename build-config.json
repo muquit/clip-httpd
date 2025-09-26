@@ -12,7 +12,10 @@
     {
       "name": "cbcopy",
       "path": "./cmd/cli",
-      "output_name": "cbcopy"
+      "output_name": "cbcopy",
+      "additional_files": [
+          "cbcopy.sh"
+      ]
     },
     {
         "name": "clip-httpd",
