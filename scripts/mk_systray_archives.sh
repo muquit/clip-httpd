@@ -1,8 +1,15 @@
 #!/bin/bash
 
 ########################################################################
-# Script to create systray binary archives
-# Creates archives for darwin-amd64, darwin-arm64, linux-amd64, windows-amd64
+# Script to create systray binary archives. Needed this because 
+# systray module uses CGO and the binaries must be compiled in each
+# platform.
+#
+# Creates archives for:
+#   darwin-amd64,
+#   darwin-arm64,
+#   linux-amd64,
+#   windows-amd64
 # By Claude AI Sonnet 4
 # Sep-25-2025 
 ########################################################################
@@ -17,6 +24,8 @@ CHECKSUMS_FILE="${OUTPUT_DIR}/${BASE_NAME}-${VERSION}-checksums.txt"
 # Platforms to build archives for
 UNIX_PLATFORMS=("darwin-amd64" "darwin-arm64" "linux-amd64")
 WINDOWS_PLATFORMS=("windows-amd64")
+
+export PATH=/bin:/usr/bin:/usr/local/bin:$PATH
 
 # Create output directory if it doesn't exist
 mkdir -p "${OUTPUT_DIR}"
