@@ -2,8 +2,9 @@
 
 The @CLIPSINK@ works on a simple and secure **client-server model**.
 The @CLIPSINK@ binary is the server that runs on the machine whose 
-clipboard you want to control, like your desktop. The client @PBCOPY@ is a small 
-script runs on a remote machine that sends text to the server.
+clipboard you want to control, like your desktop. The client @CBCOPY@ is a 
+cross-platform client that you run on a remote machine to sends text to the
+@CLIPSINK@ server unning on your desktop.
 
 @FLOW@
 
@@ -34,7 +35,7 @@ clipboard API with installed clipboard copy tools. But you can also use the flag
 
 ### Client (Text Sender)
 
-The supplied @PBCOPY@ Bash script can be used at your remote machine as a client which uses @CURL@. Its job is to prepare and send the data.
+The supplied @CBCOPY@ cros-platform client can be used at your remote machine as a client which uses @CURL@. Its job is to prepare and send the data.
 
 1.  **Reads the Text:** It takes any text that is piped (`|`) or redirected (`<`) to it from its standard input.
 

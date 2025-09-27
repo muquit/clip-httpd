@@ -16,5 +16,6 @@ clip-httpd -cert cert.pem -key key.pem
 
 ### Run copy client from your remote hosts
 
-Look at the sample client @PBCOPY@ script. It uses @CURL@. 
-I use `pbcopy` command on mac, hence I named it @PBCOPY@. 
+Use the cross-platfmr client @CBCOPY@ on remote systems to 
+send text to @CLIPHTTPD@ server running on your desktop which
+copies text to your system clipboard.

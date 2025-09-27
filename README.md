@@ -124,8 +124,9 @@ Please look at [ChangeLog](ChangeLog.md) for what has changed in the current ver
 
 The [clip-httpd](https://github.com/muquit/clip-httpd) works on a simple and secure **client-server model**.
 The [clip-httpd](https://github.com/muquit/clip-httpd) binary is the server that runs on the machine whose 
-clipboard you want to control, like your desktop. The client [pbcopy.sh](pbcopy.sh) is a small 
-script runs on a remote machine that sends text to the server.
+clipboard you want to control, like your desktop. The client [cbcopy](cbcopy) is a 
+cross-platform client that you run on a remote machine to sends text to the
+[clip-httpd](https://github.com/muquit/clip-httpd) server unning on your desktop.
 
 ![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd-go")
 
@@ -156,7 +157,7 @@ clipboard API with installed clipboard copy tools. But you can also use the flag
 
 ### Client (Text Sender)
 
-The supplied [pbcopy.sh](pbcopy.sh) Bash script can be used at your remote machine as a client which uses [curl](https://curl.se/). Its job is to prepare and send the data.
+The supplied [cbcopy](cbcopy) cros-platform client can be used at your remote machine as a client which uses [curl](https://curl.se/). Its job is to prepare and send the data.
 
 1.  **Reads the Text:** It takes any text that is piped (`|`) or redirected (`<`) to it from its standard input.
 
@@ -266,8 +267,9 @@ clip-httpd -cert cert.pem -key key.pem
 
 ### Run copy client from your remote hosts
 
-Look at the sample client [pbcopy.sh](pbcopy.sh) script. It uses [curl](https://curl.se/). 
-I use `pbcopy` command on mac, hence I named it [pbcopy.sh](pbcopy.sh). 
+Use the cross-platfmr client [cbcopy](cbcopy) on remote systems to 
+send text to [clip-httpd](https://github.com/muquit/clip-httpd) server running on your desktop which
+copies text to your system clipboard.
 
 ```bash
 A remote clipboard copy client for clip-httpd uses curl.
