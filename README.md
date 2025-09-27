@@ -93,13 +93,13 @@ Get up and running in just a few steps:
 2. **Start the server on your desktop:**
 
 ```bash
- export CLIP_HTTPD_APIKEY='your_secret_key'
+ export CLIP_HTTPD_API_KEY='your_secret_key'
 ./clip-httpd -cert cert.pem -key key.pem
 ```
 
 3. **Send text from a remote machine:**
 ```bash
- export CLIP_HTTPD_APIKEY='your_secret_key'
+ export CLIP_HTTPD_API_KEY='your_secret_key'
 echo "Hello from remote!" | ./pbcopy.sh -h <your_desktop_ip> -p 8881
 ./pbcopy.sh -h <your_desktop_ip> -p 8881 < file.txt
 ```
@@ -252,10 +252,10 @@ openssl x509 -text -noout -in cert.pem
 
 ### Run the server on your desktop
 * Generate self signed certificate first. 
-* set the CLIP_HTTPD_APIKEY env variable, e.g.
+* set the CLIP_HTTPD_API_KEY env variable, e.g.
 
 ```bash
-export CLIP_HTTPD_APIKEY='your_secret'
+export CLIP_HTTPD_API_KEY='your_secret'
 ```
 
 * On your desktop machine, start the server
@@ -361,4 +361,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-25-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-27-2025</sub>

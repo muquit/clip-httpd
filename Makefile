@@ -39,7 +39,7 @@ cli-linux:
 
 native:
 	@echo "*** Compiling $(BINARY) $(VERSION) with systray support ...."
-	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o $(BINARY_SYSTRAY)
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o $(BINARY_SYSTRAY) $(SERVER)
 
 # native systray based server, uses CGO
 # therefore has to be compiled in each system

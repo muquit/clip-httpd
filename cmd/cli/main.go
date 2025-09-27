@@ -20,7 +20,7 @@ const (
 	me          = "cbcopy"
 	defaultHost = "192.168.1.72"
 	defaultPort = "8881"
-	apiKeyEnv   = "CLIP_HTTPD_APIKEY"
+	apiKeyEnv   = "CLIP_HTTPD_API_KEY"
 	url         = "https://github.com/muquit/clip-httpd"
 )
 

@@ -1,5 +1,5 @@
 EXAMPLES    [Examples](#examples)
-API_KEY     CLIP_HTTPD_APIKEY
+API_KEY     CLIP_HTTPD_API_KEY
 GO_XBUILD   [go-xbuild-go](https://github.com/muquit/go-xbuild-go)
 MAKEFILE    [Makefile](Makefile)
 DRAWIO      [draw.io](https://app.diagrams.net/)
