@@ -233,6 +233,8 @@ Open your terminal and run the following command:
 ```bash
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 3650 -nodes
 ```
+*Note: If you have a real certificate (e.g., from Let's Encrypt or your organization), you can use that instead.*
+
 2. Fill Out the Prompts
 You'll be asked to provide information for the certificate, such as your 
 country, state, and organization name. For a local, self-signed certificate,
