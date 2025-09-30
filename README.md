@@ -47,12 +47,11 @@ I had issues with clipboard functionality when mixing iTerm2, tmux, vim/nvim, et
 
 The server run on my Mac and allows me to copy text or content of large text file 
 to the Mac clipboard.  Especially for text files, it
-is certainly much simpler than starting a scp session to copy a file. On macOS I 
-just run 
+is certainly much simpler than starting a scp session to copy a file. On
+MacOS, to copy content from clipboard to a file, I just run 
 ```bash
 pbpaste > file.txt
 ```
-to copy the content to a file.
 
 It  works on Windows and
 Linux as well, because it uses the go module [clipboard](https://github.com/atotto/clipboard) for copying text
