@@ -35,7 +35,9 @@ clipboard API with installed clipboard copy tools. But you can also use the flag
 
 ### Client (Text Sender)
 
-The supplied @CBCOPY@ cros-platform client can be used at your remote machine as a client which uses @CURL@. Its job is to prepare and send the data.
+The supplied @CBCOPY@ cros-platform stand-alone client can be used at your 
+remote machine. Its job is to prepare and send the data. There is also a bash
+script @CBCOPY_SH@ which uses @CURL@ to send text.
 
 1.  **Reads the Text:** It takes any text that is piped (`|`) or redirected (`<`) to it from its standard input.
 

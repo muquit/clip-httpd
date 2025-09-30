@@ -41,17 +41,14 @@ My desktop is a Mac, but I use [iTerm2](https://iterm2.com/), [mosh](https://mos
 remote machines and need to copy text from them, even from dumb terminals.
 I had issues with clipboard functionality when mixing iTerm2, tmux, vim/nvim, etc.
 
-It runs on my Mac and allows me to copy text or content of large text file 
-to the Mac clipboard using 
-[curl](https://curl.se/) over HTTPS from any remote environment. Especially for text files, it
+The server run on my Mac and allows me to copy text or content of large text file 
+to the Mac clipboard.  Especially for text files, it
 is certainly much simpler than starting a scp session to copy a file. On macOS I 
 just run `pbpaste > file.txt` to copy the content to a file.
 
-It should work on Windows and
+It  works on Windows and
 Linux as well, because it uses the go module [clipboard](https://github.com/atotto/clipboard) for copying text
-to clipboard which supports Mac, Windows and Linux. I use [curl](https://curl.se/) as I have
-[curl](https://curl.se/) available on the remote systems I use. It is possible to write a
-portable client as well but I do not need it right now.
+to clipboard which supports Mac, Windows and Linux. 
 
 I'm sure there are similar tools with many features that exist, but my need
 is simple. 
@@ -157,7 +154,9 @@ clipboard API with installed clipboard copy tools. But you can also use the flag
 
 ### Client (Text Sender)
 
-The supplied [cbcopy](cbcopy) cros-platform client can be used at your remote machine as a client which uses [curl](https://curl.se/). Its job is to prepare and send the data.
+The supplied [cbcopy](cbcopy) cros-platform stand-alone client can be used at your 
+remote machine. Its job is to prepare and send the data. There is also a bash
+script [cbcopy.sh](cbcopy.sh) which uses [curl](https://curl.se/) to send text.
 
 1.  **Reads the Text:** It takes any text that is piped (`|`) or redirected (`<`) to it from its standard input.
 
@@ -363,4 +362,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-27-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-29-2025</sub>
