@@ -41,11 +41,9 @@ script @CBCOPY_SH@ which uses @CURL@ to send text.
 
 1.  **Reads the Text:** It takes any text that is piped (`|`) or redirected (`<`) to it from its standard input.
 
-2.  **Packages the Request:** It uses the @CURL@ command to wrap this text into an HTTPS `POST` request.
+2.  **Adds the Secret Key:** It adds your secret key to the `X-Api-Key` header to authenticate itself.
 
-3.  **Adds the Secret Key:** It adds your secret key to the `X-Api-Key` header to authenticate itself.
-
-4.  **Sends the Data:** It sends the complete, encrypted request over the network to the server's IP address and port.
+3.  **Sends the Data:** It sends the complete, encrypted request over the network to the server's IP address and port.
 
 -----
 
