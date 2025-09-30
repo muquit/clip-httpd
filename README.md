@@ -355,6 +355,7 @@ wl-paste | base64 -d > file.png
 cat file.png | base64 | cbcopy.exe
 
 # On Windows - save image from clipboard (requires Git Bash or WSL for base64)
+# Git BASH URL: https://gitforwindows.org/
 powershell -command "Get-Clipboard" | base64 -d > file.png
 # View the decoded image
 start file.png
