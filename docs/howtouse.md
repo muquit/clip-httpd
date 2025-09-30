@@ -7,6 +7,9 @@
 ```bash
 export @API_KEY@='your_secret'
 ```
+The API key is simply a shared secret between the server and client. It
+doesn't need to be a traditional long hex or base64 encoded token - just
+use a strong, memorable passphrase.
 
 * On your desktop machine, start the server
 
