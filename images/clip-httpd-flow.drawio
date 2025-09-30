@@ -10,7 +10,7 @@
         <mxCell id="8XkzATH7I2wVXAQ4m3-Q-2" value="" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fillColor=#b1ddf0;strokeColor=#10739e;glass=1;shadow=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="106" width="330" height="281" as="geometry" />
         </mxCell>
-        <mxCell id="8XkzATH7I2wVXAQ4m3-Q-3" value="User pipes text to cbcopy client.&#xa;cbcopy sends encrypted HTTPS POST request with data and API key to the clipboard server" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;gradientColor=none;glass=0;shadow=1;fontSize=14;" parent="1" vertex="1">
+        <mxCell id="8XkzATH7I2wVXAQ4m3-Q-3" value="User pipes text to cbcopy client.&#xa;cbcopy sends encrypted HTTPS POST request with data and API key to the clipboard server" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fillColor=#6a00ff;strokeColor=#3700CC;fontStyle=1;glass=0;shadow=1;fontSize=14;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="75" y="171.5" width="260" height="150" as="geometry" />
         </mxCell>
         <mxCell id="8XkzATH7I2wVXAQ4m3-Q-6" value="clip-httpd server is listening" style="whiteSpace=wrap;strokeWidth=2;rounded=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;fontStyle=1;fontSize=14;" parent="1" vertex="1">
