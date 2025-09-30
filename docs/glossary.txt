@@ -1,4 +1,5 @@
 GIT_BASH    [Git BASH](https://gitforwindows.org/)
+GIT_BASH_URL Git BASH URL: https://gitforwindows.org/
 EXAMPLES    [Examples](#examples)
 API_KEY     CLIP_HTTPD_API_KEY
 GO_XBUILD   [go-xbuild-go](https://github.com/muquit/go-xbuild-go)
