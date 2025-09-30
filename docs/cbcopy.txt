@@ -1,4 +1,5 @@
 ```bash
+> cbcopy --help
 A remote clipboard copy client for clip-httpd.
 Project URL: https://github.com/muquit/clip-httpd
 Compiled with go version: go1.25.1

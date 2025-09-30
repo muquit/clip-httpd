@@ -297,6 +297,7 @@ copies text to your system clipboard. Look at [cbcopy.sh](cbcopy.sh), which
 uses [curl](https://curl.se/) to see how the client works.
 
 ```bash
+> cbcopy --help
 A remote clipboard copy client for clip-httpd.
 Project URL: https://github.com/muquit/clip-httpd
 Compiled with go version: go1.25.1
