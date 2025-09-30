@@ -125,7 +125,7 @@ cbcopy -h <your_desktop_ip> -p 8881 < file.txt
 ```bash
 ./clip-httpd-systray -systray -cert cert.pem -key key.pem
 ```
-I use this system tray mode so I can see at a glance if it's running or not. 
+I use the system tray mode so that I can see at a glance if it's running or not. 
 Here's a screenshot of a segment of my Mac's top menu bar:
 
 ![alt top_bar](images/top_bar.png "mac top bar")
