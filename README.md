@@ -297,31 +297,44 @@ copies text to your system clipboard. Look at [cbcopy.sh](cbcopy.sh), which
 uses [curl](https://curl.se/) to see how the client works.
 
 ```bash
-A remote clipboard copy client for clip-httpd uses curl.
+A remote clipboard copy client for clip-httpd.
+Project URL: https://github.com/muquit/clip-httpd
+Compiled with go version: go1.25.1
 
-This script reads from standard input and sends the data to a clip-httpd 
-server using curl. A native cros-platform stand alone client cbcopy is
-also available.
+This tool reads from standard input and sends the data 
+to a clip-httpd server.
+
 
 Usage:
-  cbcopy.sh [-h host] [-p port]
+  cbcopy [-h host] [-p port]
 
 Options:
-  -h    The hostname or IP address of the clip-httpd server (default: 192.168.1.72)
-  -p    The port number of the clip-httpd server (default: 8881)
+  -h string
+    	The hostname or IP of the clip-httpd server. (default "192.168.1.72")
+  -p string
+    	The port number of the clip-httpd server. (default "8881")
+  -version
+    	Print version and exit
 
 Required Environment Variable:
-  CLIP_HTTPD_API_KEY   The secret API key for authentication.
+  CLIP_HTTPD_API_KEY    The secret API key for authentication.
 
-Example:
+Examples:
+
+  # On Bash (Linux/macOS)
   export CLIP_HTTPD_API_KEY="your-secret-key"
-  echo "Hello from remote" | cbcopy.sh
-  cat file.txt | cbcopy.sh -h 192.168.1.100 -p 9000
-  cbcopy.sh < file.txt
-  # copy an image to clipboard
-  cat file.png | base64 | cbcopy.sh
-  To decode image from clipboard on mac using pbpaste
-      pbpaste | base64 -d > file.png
+  echo "hello from cbcopy-httpd!" | cbcopy
+  cat file.txt | cbcopy -h 192.168.1.100
+
+  # On Windows Command Prompt
+  set CLIP_HTTPD_API_KEY="your-secret-key"
+  echo Hello from CMD | cbcopy
+  type file.txt | cbcopy -h 192.168.1.100
+
+  # On PowerShell
+  $env:CLIP_HTTPD_API_KEY = "your-secret-key"
+  "Hello from PowerShell" | cbcopy
+  Get-Content file.txt | cbcopy -h 192.168.1.100
 ```
 
 ## Examples

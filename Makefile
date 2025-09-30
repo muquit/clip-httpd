@@ -89,7 +89,7 @@ gen_usage:
 	@${BINARY} -h 2>> $(USAGE_FILE)
 	@echo '```' >> $(USAGE_FILE)
 	@echo '```bash' > $(CBCOPY_FILE)
-	@./cbcopy.sh -h >> $(CBCOPY_FILE)
+	@-$(CLIENT_BINARY) --help 2>> $(CBCOPY_FILE)
 	@echo '```' >> $(CBCOPY_FILE)
 
 ver:
