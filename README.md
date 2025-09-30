@@ -341,8 +341,6 @@ cat file.png | base64 | cbcopy
 # Save the image from clipboard. on Mac, use pbpaste.
 pbpaste | base64 -d > file.png
 
-pbpaste | base64 -d > file.png
-
 # On Linux (X11 with xclip)
 xclip -selection clipboard -o | base64 -d > file.png
 
