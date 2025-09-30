@@ -101,6 +101,8 @@ Get up and running in just a few steps:
    openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 3650 -nodes
 ```
 
+*Note: If you have a real certificate (e.g., from Let's Encrypt or your organization), you can use that instead.*
+
 2. **Start the server on your desktop:**
 
 ```bash
