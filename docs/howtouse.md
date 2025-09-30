@@ -24,4 +24,5 @@ If you will be using the GUI version to register with system tray run it with
 
 Use the cross-platform client @CBCOPY@ on remote systems to 
 send text to @CLIPHTTPD@ server running on your desktop which
-copies text to your system clipboard.
+copies text to your system clipboard. Look at @CBCOPY_SH@, which
+uses @CURL@ to see how the client works.

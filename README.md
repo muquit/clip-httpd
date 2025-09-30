@@ -292,7 +292,8 @@ If you will be using the GUI version to register with system tray run it with
 
 Use the cross-platform client [cbcopy](cbcopy) on remote systems to 
 send text to [clip-httpd](https://github.com/muquit/clip-httpd) server running on your desktop which
-copies text to your system clipboard.
+copies text to your system clipboard. Look at [cbcopy.sh](cbcopy.sh), which
+uses [curl](https://curl.se/) to see how the client works.
 
 ```bash
 A remote clipboard copy client for clip-httpd uses curl.
