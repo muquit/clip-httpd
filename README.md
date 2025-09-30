@@ -376,7 +376,7 @@ sed -n '45,67p' main.go | cbcopy
 cat config.yaml | cbcopy
 ```
 
-```cmd
+```bash
 # Windows CMD examples
 # Copy output of a command
 ipconfig | cbcopy.exe
