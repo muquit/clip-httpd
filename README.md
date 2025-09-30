@@ -341,12 +341,27 @@ cat file.png | base64 | cbcopy
 # Save the image from clipboard. on Mac, use pbpaste.
 pbpaste | base64 -d > file.png
 
-# On Linux
+pbpaste | base64 -d > file.png
+
+# On Linux (X11 with xclip)
 xclip -selection clipboard -o | base64 -d > file.png
 
-# On Windows
-# may require git bash, wsl for base64
-powershell "Get-Clipboard | base64 -d > file.png"
+# On Linux (X11 with xsel)
+xsel --clipboard --output | base64 -d > file.png
+
+# On Linux (Wayland)
+wl-paste | base64 -d > file.png
+
+# On Windows - encode image to base64 and copy (requires Git Bash or WSL)
+cat file.png | base64 | cbcopy.exe
+
+# On Windows - save image from clipboard (requires Git Bash or WSL for base64)
+powershell -command "Get-Clipboard" | base64 -d > file.png
+
+# On Windows - alternative using built-in certutil
+certutil -encode file.png temp.b64 && type temp.b64 | cbcopy.exe && del temp.b64
+powershell -command "Get-Clipboard" > temp.b64 && certutil -decode temp.b64 file.png && del temp.b64
+
 
 # Any binary data can be copied and pasted this way
 ```
