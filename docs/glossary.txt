@@ -1,3 +1,4 @@
+CHANGELOG   [ChangeLog](ChangeLog.md)
 GIT_BASH    [Git BASH](https://gitforwindows.org/)
 GIT_BASH_URL Git BASH URL: https://gitforwindows.org/
 EXAMPLES    [Examples](#examples)

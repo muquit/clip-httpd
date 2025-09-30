@@ -3,7 +3,7 @@
   - [History](#history)
   - [Usage](#usage)
   - [Quick Start](#quick-start)
-  - [Version](#version)
+  - [Latest Version (v1.0.2)](#latest-version-v102)
   - [How it works](#how-it-works)
     - [Server (Text Receiver)](#server-text-receiver)
     - [Client (Text Sender)](#client-text-sender)
@@ -132,11 +132,9 @@ Here's a screenshot of a segment of my Mac's top menu bar:
 
 Please look [Examples](#examples) section for various usecases
 
-## Version
-The current version is 1.0.1
-
+## Latest Version (v1.0.2)
+The current version is v1.0.2
 Please look at [ChangeLog](ChangeLog.md) for what has changed in the current version.
-
 
 ## How it works
 

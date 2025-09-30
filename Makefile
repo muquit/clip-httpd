@@ -19,6 +19,7 @@ USAGE_FILE=./docs/usage.md
 CBCOPY_FILE=./docs/cbcopy.txt
 SERVER=./cmd/server
 CLIENT=./cmd/cli
+VF=./docs/version.md
 
 
 all: build build_all doc
@@ -77,12 +78,12 @@ build_native:
 release:
 	go-xbuild-go -release
 
-doc: gen_usage
+doc: build gen_usage ver
 	echo "*** Generating README.md with TOC ..."
 	touch $(README)
 	$(MARKDOWC_TOC) -i $(MAIN_MD) -o $(README) --glossary ${GLOSSARY_FILE} -f
 
-gen_usage: build
+gen_usage:
 	@echo '## Usage' > $(USAGE_FILE)
 	@echo '```' >> $(USAGE_FILE)
 	@${BINARY} -h 2>> $(USAGE_FILE)
@@ -90,6 +91,11 @@ gen_usage: build
 	@echo '```bash' > $(CBCOPY_FILE)
 	@./cbcopy.sh -h >> $(CBCOPY_FILE)
 	@echo '```' >> $(CBCOPY_FILE)
+
+ver:
+	echo "## Latest Version ($(VERSION))" > $(VF)
+	echo "The current version is $(VERSION)" >> $(VF)
+	echo "Please look at @CHANGELOG@ for what has changed in the current version.">> $(VF)
 
 clean:
 	/bin/rm -f $(BINARY)
