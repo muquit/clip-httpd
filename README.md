@@ -285,6 +285,9 @@ use a strong, memorable passphrase.
 clip-httpd -cert cert.pem -key key.pem
 ```
 
+If you will be using the GUI version to register with system tray run it with
+`-systray`
+
 ### Run copy client from your remote hosts
 
 Use the cross-platfmr client [cbcopy](cbcopy) on remote systems to 
