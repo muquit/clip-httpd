@@ -41,6 +41,7 @@ xsel --clipboard --output | base64 -d > file.png
 wl-paste | base64 -d > file.png
 
 # On Windows - encode image to base64 and copy (requires Git Bash or WSL)
+# @GIT_BASH@
 cat file.png | base64 | cbcopy.exe
 
 # On Windows - save image from clipboard (requires Git Bash or WSL for base64)
