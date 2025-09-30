@@ -21,7 +21,7 @@
   - [Authors](#authors)
 
 ## Introduction
-[clip-httpd](https://github.com/muquit/clip-httpd) is a simple, secure, cross-platform clipboard server.
+`clip-httpd` is a simple, secure, cross-platform clipboard server.
 I use it to paste `text` to my Laptop/workstation's clipboard from remote
 systems securely without pain of fumbling with mouse or firing up scp and such 
 to get a file.
@@ -45,7 +45,7 @@ My desktop is a Mac, but I use [iTerm2](https://iterm2.com/), [mosh](https://mos
 remote machines and need to copy text from them, even from dumb terminals.
 I had issues with clipboard functionality when mixing iTerm2, tmux, vim/nvim, etc.
 
-The server run on my Mac and allows me to copy text or content of large text file 
+The server runs on my Mac and allows me to copy text or content of large text file 
 to the Mac clipboard.  Especially for text files, it
 is certainly much simpler than starting a scp session to copy a file. On
 MacOS, to copy content from clipboard to a file, I just run 
@@ -53,9 +53,9 @@ MacOS, to copy content from clipboard to a file, I just run
 pbpaste > file.txt
 ```
 
-It  works on Windows and
-Linux as well, because it uses the go module [clipboard](https://github.com/atotto/clipboard) for copying text
-to clipboard which supports Mac, Windows and Linux. 
+It  works on Windows and Linux as well, because it uses the go module [clipboard](https://github.com/atotto/clipboard) for copying text
+to clipboard which supports Mac, Windows and Linux. However, custom clipboard
+copy command can be specified with `-copy-command` flag.
 
 I'm sure there are similar tools with many features that exist, but my need
 is simple and it is serving me well.

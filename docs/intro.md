@@ -1,5 +1,5 @@
 ## Introduction
-@CLIPSINK@ is a simple, secure, cross-platform clipboard server.
+`clip-httpd` is a simple, secure, cross-platform clipboard server.
 I use it to paste `text` to my Laptop/workstation's clipboard from remote
 systems securely without pain of fumbling with mouse or firing up scp and such 
 to get a file.
