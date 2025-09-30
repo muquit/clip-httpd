@@ -97,8 +97,8 @@ Get up and running in just a few steps:
 3. **Send text from a remote machine:**
 ```bash
  export CLIP_HTTPD_API_KEY='your_secret_key'
-echo "Hello from remote!" | ./pbcopy.sh -h <your_desktop_ip> -p 8881
-./pbcopy.sh -h <your_desktop_ip> -p 8881 < file.txt
+echo "Hello from remote!" | cbcopy -h <your_desktop_ip> -p 8881
+cbcopy -h <your_desktop_ip> -p 8881 < file.txt
 ```
 4. **Desktop Integration**
 ```bash
@@ -310,7 +310,7 @@ Also, I find this techniques very useful when working with LLMs.
 
 ```bash
 # Copy an API key from a json file 
-cat ~/api.key | jq -r .api_key | pbcopy.sh
+cat ~/api.key | jq -r .api_key | cbcopy
 ```
 
 ```bash
@@ -320,12 +320,12 @@ cat ~/api.key | jq -r .api_key | pbcopy.sh
 ssh -R 881:localhost:8881 user@remote_host
 
 # At your remote host, copy text to localhost at port 8881
-echo 'hello over VPN' | pbcopy.sh -h 127.0.0.1 -p 8881
+echo 'hello over VPN' | cbcopy -h 127.0.0.1 -p 8881
 ```
 
 ```bash
 # Copy an image to clipboard
-cat file.png | base64 | pbcopy.sh
+cat file.png | base64 | cbcopy
 
 # Save the image from clipboard. on Mac, use pbpaste.
 pbpaste | base64 -d > file.png
@@ -342,12 +342,12 @@ powershell "Get-Clipboard | base64 -d > file.png"
 
 ```bash
 # On remote server - send a specific function to clipboard
-sed -n '45,67p' main.go | pbcopy.sh
+sed -n '45,67p' main.go | cbcopy
 ```
 
 ```bash
 # Or send an entire file
-cat config.yaml | pbcopy.sh
+cat config.yaml | cbcopy
 ```
 
 etc.

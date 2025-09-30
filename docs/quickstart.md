@@ -18,8 +18,8 @@ Get up and running in just a few steps:
 3. **Send text from a remote machine:**
 ```bash
  export CLIP_HTTPD_API_KEY='your_secret_key'
-echo "Hello from remote!" | ./pbcopy.sh -h <your_desktop_ip> -p 8881
-./pbcopy.sh -h <your_desktop_ip> -p 8881 < file.txt
+echo "Hello from remote!" | cbcopy -h <your_desktop_ip> -p 8881
+cbcopy -h <your_desktop_ip> -p 8881 < file.txt
 ```
 4. **Desktop Integration**
 ```bash
