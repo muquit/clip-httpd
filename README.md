@@ -55,7 +55,9 @@ Linux as well, because it uses the go module [clipboard](https://github.com/atot
 to clipboard which supports Mac, Windows and Linux. 
 
 I'm sure there are similar tools with many features that exist, but my need
-is simple. 
+is simple and it is serving me well.
+
+Hope you would find it usefull as well.
 
 ## Usage
 ```
