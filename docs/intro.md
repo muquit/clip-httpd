@@ -10,5 +10,9 @@ is required using a secret API key for secure communication with the server.
 This allows you to securely update the system clipboard of your desktop 
 from any other machine on your network using a simple HTTP request.
 
+The API key is simply a shared secret between the server and client. It 
+doesn't need to be a traditional long hex or base64 encoded token - just 
+use a strong, memorable passphrase.
+
 I hope you find this project useful! Pull requests, suggestions, and 
 feedback are always welcome.
