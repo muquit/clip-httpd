@@ -20,8 +20,8 @@ clip-httpd -cert cert.pem -key key.pem
 If you will be using the GUI version to register with system tray run it with
 `-systray`
 
-### Run copy client from your remote hosts
+### Run copy client on your remote hosts
 
-Use the cross-platfmr client @CBCOPY@ on remote systems to 
+Use the cross-platform client @CBCOPY@ on remote systems to 
 send text to @CLIPHTTPD@ server running on your desktop which
 copies text to your system clipboard.

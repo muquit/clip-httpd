@@ -15,7 +15,7 @@
     - [Dump the certificate](#dump-the-certificate)
   - [How to use](#how-to-use)
     - [Run the server on your desktop](#run-the-server-on-your-desktop)
-    - [Run copy client from your remote hosts](#run-copy-client-from-your-remote-hosts)
+    - [Run copy client on your remote hosts](#run-copy-client-on-your-remote-hosts)
   - [Examples](#examples)
   - [License is MIT](#license-is-mit)
   - [Authors](#authors)
@@ -288,9 +288,9 @@ clip-httpd -cert cert.pem -key key.pem
 If you will be using the GUI version to register with system tray run it with
 `-systray`
 
-### Run copy client from your remote hosts
+### Run copy client on your remote hosts
 
-Use the cross-platfmr client [cbcopy](cbcopy) on remote systems to 
+Use the cross-platform client [cbcopy](cbcopy) on remote systems to 
 send text to [clip-httpd](https://github.com/muquit/clip-httpd) server running on your desktop which
 copies text to your system clipboard.
 
