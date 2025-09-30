@@ -361,6 +361,8 @@ powershell -command "Get-Clipboard" | base64 -d > file.png
 # On Windows - alternative using built-in certutil
 certutil -encode file.png temp.b64 && type temp.b64 | cbcopy.exe && del temp.b64
 powershell -command "Get-Clipboard" > temp.b64 && certutil -decode temp.b64 file.png && del temp.b64
+# View the decoded image
+start file.png
 
 
 # Any binary data can be copied and pasted this way
