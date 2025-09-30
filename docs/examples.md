@@ -16,10 +16,10 @@ cat ~/api.key | jq -r .api_key | cbcopy
 ```bash
 # Copy to the clipboard of your laptop/workstation connected to a remote 
 # system over VPN.
-# First create a reverse ssh tuneel from your system to the remote system.
+# First create a reverse ssh tunnel from your system to the remote system.
 # Check your company policy if you are connecting to a host at corporate
 # network.
-ssh -R 881:localhost:8881 user@remote_host
+ssh -R 8881:localhost:8881 user@remote_host
 
 # At your remote host, copy text to localhost at port 8881
 echo 'hello over VPN' | cbcopy -h 127.0.0.1 -p 8881
