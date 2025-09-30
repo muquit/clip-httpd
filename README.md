@@ -415,7 +415,7 @@ MIT License - See [LICENSE](LICENSE) file for details.
 ## Authors
 * Developed with [Google Gemini AI 2.5 Pro](https://gemini.google.com/app), working under my guidance and instructions.
 
-* Documentation cleaned up by [Claude AI 4 Sonnet](https://claude.ai)
+* Documentation cleaned up by [Claude AI Sonnet 4](https://claude.ai)
 
 
 ---
