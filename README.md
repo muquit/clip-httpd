@@ -144,7 +144,7 @@ clipboard you want to control, like your desktop. The client [cbcopy](cbcopy) is
 cross-platform client that you run on a remote machine to sends text to the
 [clip-httpd](https://github.com/muquit/clip-httpd) server unning on your desktop.
 
-![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd-go")
+![alt clip-httpd](images/clip-httpd-flow.drawio.png "clip-httpd")
 
 -----
 
