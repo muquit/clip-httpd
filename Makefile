@@ -69,7 +69,7 @@ show_commit_info:
 build_all:
 	@echo "*** Cross Compiling $(BINARY) $(VERSION) ...."
 	@/bin/rm -rf ./bin
-	go-xbuild-go -build-args '$(BUILD_OPTIONS)' -additional-files cbcopy.sh
+	go-xbuild-go -config build-config.json -additional-files cbcopy.sh
 
 build_native:
 
@@ -80,9 +80,7 @@ release:
 doc: gen_usage
 	echo "*** Generating README.md with TOC ..."
 	touch $(README)
-	chmod 600 $(README)
 	$(MARKDOWC_TOC) -i $(MAIN_MD) -o $(README) --glossary ${GLOSSARY_FILE} -f
-	chmod 444 $(README)
 
 gen_usage: build
 	@echo '## Usage' > $(USAGE_FILE)

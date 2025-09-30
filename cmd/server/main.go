@@ -38,6 +38,7 @@ import (
 const (
 	me      = "clip-httpd"
 	url     = "https://github.com/muquit/clip-httpd"
+	apiKeyEnv = "CLIP_HTTPD_API_KEY"
 )
 
 // clipboard handler
@@ -97,7 +98,19 @@ func main() {
 		fmt.Fprintf(flag.CommandLine.Output(), "URL: %s/\n\n", url)
 		fmt.Fprintf(flag.CommandLine.Output(), "Flags:\n")
 		flag.PrintDefaults()
-		fmt.Fprintf(flag.CommandLine.Output(), "\n** Specify server secret with env variable CLIP_HTTPD_API_KEY ***\n")
+		fmt.Fprintf(flag.CommandLine.Output(), "\n** Specify server secret with env variable CLIP_HTTPD_API_KEY **\n")
+		fmt.Fprintf(flag.CommandLine.Output(), "Set the same API key for cbcopy client on each remote host\n")
+		fmt.Fprintf(flag.CommandLine.Output(), 
+		`Examples:
+  # On Bash (Linux/macOS)
+  export %s="your-secret-key"
+
+  # On Windows Command Prompt
+  set %s=your-secret-key
+
+  # On PowerShell
+  $env:%s = "your-secret-key"
+  `, apiKeyEnv, apiKeyEnv, apiKeyEnv)
 	}
 	host := flag.String("host", "0.0.0.0", "Host address to bind the server to")
 	port := flag.Int("port", 8881, "Port for the server to listen on")

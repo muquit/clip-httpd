@@ -19,5 +19,15 @@ Flags:
   -version
     	Print version and exit
 
-** Specify server secret with env variable CLIP_HTTPD_API_KEY ***
-```
+** Specify server secret with env variable CLIP_HTTPD_API_KEY **
+Set the same API key for cbcopy client on each remote host
+Examples:
+  # On Bash (Linux/macOS)
+  export CLIP_HTTPD_API_KEY="your-secret-key"
+
+  # On Windows Command Prompt
+  set CLIP_HTTPD_API_KEY=your-secret-key
+
+  # On PowerShell
+  $env:CLIP_HTTPD_API_KEY = "your-secret-key"
+  ```

@@ -16,7 +16,8 @@ cat ~/api.key | jq -r .api_key | cbcopy
 ```bash
 # Copy to the clipboard of your laptop/workstation connected to a remote 
 # system over VPN.
-# First create a reverse ssh proxy from your system to the remote system
+# First create a reverse ssh proxy from your system to the remote system.
+# Check your company policy if you are connecting to a host at your work.
 ssh -R 881:localhost:8881 user@remote_host
 
 # At your remote host, copy text to localhost at port 8881
@@ -48,6 +49,33 @@ sed -n '45,67p' main.go | cbcopy
 ```bash
 # Or send an entire file
 cat config.yaml | cbcopy
+```
+
+```cmd
+# Windows CMD examples
+# Copy output of a command
+ipconfig | cbcopy.exe
+
+# Copy contents of a file
+type config.json | cbcopy.exe
+
+# Copy current directory path
+cd | cbcopy.exe
+
+# Extract and copy a value from JSON (requires jq - install from jqlang.org/download/)
+type api.key | jq.exe -r .api_key | cbcopy.exe
+```
+
+```powershell
+# Windows PowerShell examples
+# Copy command output
+Get-Process | ConvertTo-Json | cbcopy.exe
+
+# Copy file contents
+Get-Content config.yaml | cbcopy.exe
+
+# Copy directory listing
+Get-ChildItem | Out-String | cbcopy.exe
 ```
 
 etc.

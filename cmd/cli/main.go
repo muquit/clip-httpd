@@ -33,12 +33,12 @@ func main() {
     // --- UPDATED SECTION START ---
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, `A remote clipboard copy client for clip-httpd.
+Project URL: %s
+Compiled with go version: %s
 
 This tool reads from standard input and sends the data 
 to a clip-httpd server.
 
-Project URL: %s
-Compiled with go version: %s
 
 Usage:
   cbcopy [-h host] [-p port]
