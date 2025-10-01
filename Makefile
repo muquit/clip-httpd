@@ -45,20 +45,24 @@ native:
 # native systray based server, uses CGO
 # therefore has to be compiled in each system
 server-darwin-arm64:
-	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
-		clip-httpd-systray-$(VERSION)-darwin-arm64 $(SERVER)
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray  \
+		-tags iconunix \
+		-o clip-httpd-systray-$(VERSION)-darwin-arm64 $(SERVER)
 
 server-darwin-amd64:
-	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
-		clip-httpd-systray-$(VERSION)-darwin-amd64 $(SERVER)
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray \
+		-tags iconunix \
+		-o clip-httpd-systray-$(VERSION)-darwin-amd64 $(SERVER)
 
 server-linux-amd64:
-	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
-		clip-httpd-systray-$(VERSION)-linux-amd64 $(SERVER)
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray \
+		-tags iconunix \
+		-o clip-httpd-systray-$(VERSION)-linux-amd64 $(SERVER)
 
 server-windows-amd64:
-	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray -o \
-		clip-httpd-systray-$(VERSION)-windows-amd64 $(SERVER)
+	go build $(BUILD_OPTIONS) $(LDFLAGS) -tags systray \
+		-tags iconwin \
+		-o clip-httpd-systray-$(VERSION)-windows-amd64 $(SERVER)
 
 show_commit_info:
 	go version -m $(BINARY)
