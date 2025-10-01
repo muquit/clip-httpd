@@ -21,7 +21,7 @@ darwin/arm64
 #ios/amd64
 #ios/arm64
 #js/wasm
-#linux/386
+linux/386
 linux/amd64
 linux/arm
 linux/arm64
