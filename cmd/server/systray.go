@@ -37,7 +37,7 @@ func onReady() {
 	// does not seem to work reliably
 //	systray.SetIcon(getIcon())
 	// just use a emoji in the title
-	systray.setTemplateIcon(Clipboard.Data, Clipboard.Data)
+	systray.SetTemplateIcon(Clipboard.Data, Clipboard.Data)
 	systray.SetTitle("📋 ClipHTTPD")
 	systray.SetTooltip("ClipHTTPD Clipboard Server")
 

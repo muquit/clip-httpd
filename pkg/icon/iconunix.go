@@ -1,4 +1,4 @@
-//go:build unix
+//go:build iconunix
 //
 // This file is created by hod 1.8 by running:
 //  hod -g clipboard.png

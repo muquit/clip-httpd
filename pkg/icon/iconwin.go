@@ -1,4 +1,4 @@
-//go:build win
+//go:build iconwin
 //
 // This file is created by hod 1.8 by running:
 //  hod -g clipboard.ico
