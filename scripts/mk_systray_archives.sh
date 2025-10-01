@@ -14,7 +14,7 @@
 # Sep-25-2025 
 ########################################################################
 
-set -e
+#set -e
 
 VERSION="v1.0.2"
 BASE_NAME="clip-httpd-systray"
@@ -76,22 +76,29 @@ create_unix_archive() {
 create_windows_archive() {
     local platform=$1
     local binary_name="${BASE_NAME}-${VERSION}-${platform}"
+    local binary_with_exe="${binary_name}.exe"  # Add this
     local archive_name="${binary_name}.d.zip"
     local temp_dir="${binary_name}.d"
     
     echo "Creating archive for ${platform}..."
     
-    # Check if binary exists
-    if [[ ! -f "${binary_name}" ]]; then
-        echo "Error: Binary ${binary_name} not found in current directory"
-        return 1
+    # Check for both with and without .exe
+    if [[ -f "${binary_with_exe}" ]]; then
+        # Binary already has .exe extension
+        local source_binary="${binary_with_exe}"
+    elif [[ -f "${binary_name}" ]]; then
+        # Binary doesn't have .exe extension
+        local source_binary="${binary_name}"
+    else
+        echo "Warning: Binary ${binary_name} (or .exe) not found, skipping..."
+        return 0
     fi
     
     # Create temporary directory structure
     mkdir -p "${temp_dir}"
     
-    # Copy files to temp directory (add .exe extension to binary)
-    cp "${binary_name}" "${temp_dir}/${binary_name}.exe"
+    # Copy files to temp directory
+    cp "${source_binary}" "${temp_dir}/${binary_name}.exe"
     cp LICENSE "${temp_dir}/"
     cp README.md "${temp_dir}/"
     cp platforms.txt "${temp_dir}/"

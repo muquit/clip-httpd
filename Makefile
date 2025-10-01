@@ -62,7 +62,7 @@ server-linux-amd64:
 server-windows-amd64:
 	go build $(BUILD_OPTIONS) $(LDFLAGS) \
 		-tags "systray iconwin" \
-		-o clip-httpd-systray-$(VERSION)-windows-amd64 $(SERVER)
+		-o clip-httpd-systray-$(VERSION)-windows-amd64.exe $(SERVER)
 
 show_commit_info:
 	go version -m $(BINARY)
