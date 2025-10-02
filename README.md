@@ -126,9 +126,14 @@ cbcopy -h <your_desktop_ip> -p 8881 < file.txt
 ./clip-httpd-systray -systray -cert cert.pem -key key.pem
 ```
 I use the system tray mode so that I can see at a glance if it's running or not. 
-Here's a screenshot of a segment of my Mac's top menu bar:
 
-![alt top_bar](images/top_bar.png "mac top bar")
+Screenshot of a segment of my Mac's Top Bar:
+
+![alt mac_top_bar](images/screenshot_mac_top_bar.png "clip-httpd Mac Top Bar")
+
+Screenshot of a segment of Linux Top Bar:
+
+![alt mac_top_bar](images/screenshot_ubuntu_24.04.2.png "clip-httpd Linux Top Bar")
 
 Please look [Examples](#examples) section for various usecases
 
@@ -449,4 +454,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Sep-30-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Oct-02-2025</sub>
