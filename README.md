@@ -46,7 +46,9 @@ feedback are always welcome.
 
 My desktop is a Mac, but I use [iTerm2](https://iterm2.com/), [mosh](https://mosh.org/), [tmux](https://github.com/tmux/tmux/wiki) to connect to various 
 remote machines and need to copy text from them, even from dumb terminals.
-I had issues with clipboard functionality when mixing iTerm2, tmux, vim/nvim, etc.
+
+I had issues with clipboard functionality when mixing iTerm2, tmux, vim/nvim,
+OSC52, etc. clip-httpd works flawlessly for me.
 
 The server runs on my Mac and allows me to copy text or content of large text file 
 to the Mac clipboard.  Especially for text files, it
