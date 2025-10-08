@@ -27,7 +27,7 @@ OPENSSL     [openssl](https://www.openssl.org/)
 MAILSEND    [mailsend](https://github.com/muquit/mailsend)
 MAILSEND_GO [mailsend-go](https://github.com/muquit/mailsend-go)
 RELEASES    [Releases](https://github.com/muquit/clip-httpd/releases)
-CLAUDE      [Claude AI Sonnet 4](https://claude.ai)
+CLAUDE      [Claude AI Sonnet 4/4.5](https://claude.ai)
 GEMINI_PRO  [Google Gemini AI 2.5 Pro](https://gemini.google.com/app)
 GO_XBUILD_GO [go-xbuild-go](https://github.com/muquit/go-xbuild-go)
 TODO        TODO
