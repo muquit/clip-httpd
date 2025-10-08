@@ -8,7 +8,10 @@
     - [Server (Text Receiver)](#server-text-receiver)
     - [Client (Text Sender)](#client-text-sender)
   - [Installation](#installation)
-    - [Download](#download)
+    - [1. Download](#1-download)
+    - [2. Verify Checksum](#2-verify-checksum)
+    - [3. Extract](#3-extract)
+    - [4. Install](#4-install)
     - [Building from source](#building-from-source)
   - [How to Generate a Self-Signed Certificate](#how-to-generate-a-self-signed-certificate)
     - [Command flags of openssl](#command-flags-of-openssl)
@@ -192,8 +195,45 @@ script [cbcopy.sh](cbcopy.sh) which uses [curl](https://curl.se/) to send text.
 
 
 ## Installation
-### Download
-* Download pre-compiled binaries from [Releases](https://github.com/muquit/clip-httpd/releases) page
+### 1. Download
+* Download the appropriate archive for your platform from the [Releases](https://github.com/muquit/clip-httpd/releases) page
+
+### 2. Verify Checksum
+
+```bash
+# Download the checksums file
+# Verify the archive
+sha256sum -c cbcopy-vX.X.X-checksums.txt
+```
+
+### 3. Extract
+macOS/Linux:
+
+```bash
+tar -xzf cbcopy-vX.X.X-darwin-amd64.d.tar.gz
+cd cbcopy-vX.X.X-darwin-amd64.d/
+```
+
+Windows:
+
+The tar command is available in Windows 10 (1803) and later, or you can 
+use the GUI (right-click → Extract All). After extracting, copy/rename the 
+binary somewhere in your PATH.
+
+### 4. Install
+
+```bash
+# macOS/Linux
+sudo cp cbcopy-vX.X.X-darwin-amd64 /usr/local/bin/cbcopy
+sudo chmod +x /usr/local/bin/cbcopy
+```
+
+```bash
+# Windows
+copy cbcopy-vX.X.X-windows-amd64.exe C:\Windows\System32\cbcopy.exe
+```
+
+Use the same procedure for server and GUI version
 
 * Please look at [How to use](#how-to-use) and [Examples](#examples) sections
 for details.

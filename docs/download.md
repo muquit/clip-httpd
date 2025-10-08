@@ -1,6 +1,43 @@
 ## Installation
-### Download
-* Download pre-compiled binaries from @RELEASES@ page
+### 1. Download
+* Download the appropriate archive for your platform from the @RELEASES@ page
+
+### 2. Verify Checksum
+
+```bash
+# Download the checksums file
+# Verify the archive
+sha256sum -c cbcopy-vX.X.X-checksums.txt
+```
+
+### 3. Extract
+macOS/Linux:
+
+```bash
+tar -xzf cbcopy-vX.X.X-darwin-amd64.d.tar.gz
+cd cbcopy-vX.X.X-darwin-amd64.d/
+```
+
+Windows:
+
+The tar command is available in Windows 10 (1803) and later, or you can 
+use the GUI (right-click → Extract All). After extracting, copy/rename the 
+binary somewhere in your PATH.
+
+### 4. Install
+
+```bash
+# macOS/Linux
+sudo cp cbcopy-vX.X.X-darwin-amd64 /usr/local/bin/cbcopy
+sudo chmod +x /usr/local/bin/cbcopy
+```
+
+```bash
+# Windows
+copy cbcopy-vX.X.X-windows-amd64.exe C:\Windows\System32\cbcopy.exe
+```
+
+Use the same procedure for server and GUI version
 
 * Please look at [How to use](#how-to-use) and [Examples](#examples) sections
 for details.
