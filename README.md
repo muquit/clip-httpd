@@ -140,6 +140,8 @@ Screenshot of a segment of Linux Top Bar:
 
 ![alt mac_top_bar](images/screenshot_ubuntu_24.04.2.png "clip-httpd Linux Top Bar")
 
+Windows systray works fine as wel, sorry I didn't get time to take a screenshot.
+
 Please look [Examples](#examples) section for various usecases
 
 ## Latest Version (v1.0.2)
