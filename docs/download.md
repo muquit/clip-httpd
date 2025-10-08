@@ -42,7 +42,7 @@ copy cbcopy-vX.X.X-windows-amd64.exe C:\Windows\System32\cbcopy.exe
 
 Use the same procedure for server and GUI version
 
-* Please look at [How to use](#how-to-use) and [Examples](#examples) sections
+Please look at [How to use](#how-to-use) and [Examples](#examples) sections
 for details.
 
 ### Building from source
