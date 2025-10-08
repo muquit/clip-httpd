@@ -37,6 +37,6 @@ Screenshot of a segment of Linux Top Bar:
 
 @LINUX_TOP_BAR@
 
-Windows systray works fine as wel, sorry I didn't get time to take a screenshot.
+Windows systray works fine as well, I didn't get time to take a screenshot.
 
 Please look @EXAMPLES@ section for various usecases

@@ -20,14 +20,14 @@ Please see the **Installation** section in [README.md](README.md#installation) f
 | cbcopy-v1.0.2-linux-arm64.d.tar.gz | Linux | ARM64 | |
 | cbcopy-v1.0.2-raspberry-pi-jessie.d.tar.gz | Linux | ARM (Pi Jessie) | |
 | cbcopy-v1.0.2-raspberry-pi.d.tar.gz | Linux | ARM (Pi) | |
-| cbcopy-v1.0.2-windows-386.d.zip | Windows | x86 (32-bit) |Legacy 32-bit systems|
+| cbcopy-v1.0.2-windows-386.d.zip | Windows | x86 (32-bit) | |
 | cbcopy-v1.0.2-windows-amd64.d.zip | Windows | x86_64 | |
-| clip-httpd-systray-v1.0.2-darwin-amd64.d.tar.gz | macOS | x86_64 |GUI |
-| clip-httpd-systray-v1.0.2-darwin-arm64.d.tar.gz | macOS | ARM64 |GUI |
-| clip-httpd-systray-v1.0.2-linux-amd64.d.tar.gz | Linux | x86_64 |GUI |
-| clip-httpd-systray-v1.0.2-windows-amd64.d.zip | Windows | x86_64 |GUI |
+| clip-httpd-systray-v1.0.2-darwin-amd64.d.tar.gz | macOS | x86_64 | |
+| clip-httpd-systray-v1.0.2-darwin-arm64.d.tar.gz | macOS | ARM64 | |
+| clip-httpd-systray-v1.0.2-linux-amd64.d.tar.gz | Linux | x86_64 | |
+| clip-httpd-systray-v1.0.2-windows-amd64.d.zip | Windows | x86_64 | |
 | clip-httpd-v1.0.2-darwin-amd64.d.tar.gz | macOS | x86_64 | |
-| clip-httpd-v1.0.2-darwin-arm64.d.tar.gz | macOS | ARM64 |Apple Silicon (M-series chips)|
+| clip-httpd-v1.0.2-darwin-arm64.d.tar.gz | macOS | ARM64 | |
 | clip-httpd-v1.0.2-linux-386.d.tar.gz | Linux | x86 (32-bit) | |
 | clip-httpd-v1.0.2-linux-amd64.d.tar.gz | Linux | x86_64 | |
 | clip-httpd-v1.0.2-linux-arm.d.tar.gz | Linux | ARM | |
@@ -36,3 +36,6 @@ Please see the **Installation** section in [README.md](README.md#installation) f
 | clip-httpd-v1.0.2-raspberry-pi.d.tar.gz | Linux | ARM (Pi) | |
 | clip-httpd-v1.0.2-windows-386.d.zip | Windows | x86 (32-bit) | |
 | clip-httpd-v1.0.2-windows-amd64.d.zip | Windows | x86_64 | |
+
+
+Cross-compiled and released with [go-xbuild-go](https://github.com/muquit/go-xbuild-go) go-xbuild-go v1.0.7

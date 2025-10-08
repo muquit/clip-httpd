@@ -139,6 +139,10 @@ class GenGithubReleaseMD
       md << "| #{archive[:filename]} | #{archive[:platform]} | #{archive[:architecture]} | |"
     end
 
+    v=`go-xbuild-go -version`.chomp
+
+    md << "\n\nCross-compiled and released with [go-xbuild-go](https://github.com/muquit/go-xbuild-go) #{v}"
+
     md.join("\n") + "\n"
   end
 
