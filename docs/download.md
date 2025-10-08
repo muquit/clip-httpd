@@ -9,6 +9,7 @@
 # Verify the archive
 sha256sum -c cbcopy-vX.X.X-checksums.txt
 ```
+Repeat the step for other archives
 
 ### 3. Extract
 macOS/Linux:
@@ -17,6 +18,8 @@ macOS/Linux:
 tar -xzf cbcopy-vX.X.X-darwin-amd64.d.tar.gz
 cd cbcopy-vX.X.X-darwin-amd64.d/
 ```
+
+Repeat the step for other archives
 
 Windows:
 
