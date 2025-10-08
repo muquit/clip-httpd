@@ -4,7 +4,8 @@
 - [v1.0.1](#v101)
 
 # v1.0.2
-- Native client converted from pbcopy.sh in go by Google AI Gemini 2.5 Pro 
+- Cross-platform Native client cbcopy is available, converted from pbcopy.
+sh in go by Google AI Gemini 2.5 Pro 
 
 (Sep-24-2025)
 

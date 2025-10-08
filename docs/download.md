@@ -23,11 +23,11 @@ Cross-compile for other platforms
 Then, type:
 
 ```bash
-go-xbuild-go
+go-xbuild-go -config build-config.json
 or 
 make build_all
 ```
-Look at `bin/ directory for archive with build binaries
+Look at `bin/` directory for archive with built binaries
 
 Please look at @MAKEFILE@ for more info
 

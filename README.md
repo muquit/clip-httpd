@@ -216,11 +216,11 @@ Cross-compile for other platforms
 Then, type:
 
 ```bash
-go-xbuild-go
+go-xbuild-go -config build-config.json
 or 
 make build_all
 ```
-Look at `bin/ directory for archive with build binaries
+Look at `bin/` directory for archive with built binaries
 
 Please look at [Makefile](Makefile) for more info
 
@@ -454,4 +454,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Oct-02-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Oct-07-2025</sub>
