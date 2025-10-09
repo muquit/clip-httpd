@@ -39,8 +39,8 @@ The API key is simply a shared secret between the server and client. It
 doesn't need to be a traditional long hex or base64 encoded token - just 
 use a strong, memorable passphrase.
 
-I hope you find this project useful! Pull requests, suggestions, and 
-feedback are always welcome.
+I hope you find this project useful! Pull requests, bug reports, 
+suggestions, and feedback are always welcome.
 
 ## History
 
@@ -501,4 +501,4 @@ MIT License - See [LICENSE](LICENSE) file for details.
 
 
 ---
-<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Oct-07-2025</sub>
+<sub>TOC is created by https://github.com/muquit/markdown-toc-go on Oct-08-2025</sub>

@@ -126,7 +126,7 @@ class GenGithubReleaseMD
     md << ""
     md << "Please see [ChangeLog](ChangeLog.md) for details."
     md << ""
-    md << "Please see the **Installation** section in [README.md](README.md#installation) for installation and checksum verification instructions."
+    md << "Please see the [Installation](README.md#installation)  section in **README.md** for installation and checksum verification instructions."
     md << ""
     md << "**Note for Windows users:** Microsoft Edge may flag Go binaries as potentially harmful due to false positives in its virus detection software. This is a known issue with Go-compiled executables. Please use Chrome or Firefox to download, or review the source code and build it yourself if you prefer. Building from source is simple - download Go from https://go.dev/ (no other tools required) and run the build commands."
     md << ""

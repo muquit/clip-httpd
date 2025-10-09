@@ -14,5 +14,5 @@ The API key is simply a shared secret between the server and client. It
 doesn't need to be a traditional long hex or base64 encoded token - just 
 use a strong, memorable passphrase.
 
-I hope you find this project useful! Pull requests, suggestions, and 
-feedback are always welcome.
+I hope you find this project useful! Pull requests, bug reports, 
+suggestions, and feedback are always welcome.
